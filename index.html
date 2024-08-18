@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Apartments</title>
     <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="profil.css" />
+    <link rel="stylesheet" href="navbar.css" />
+
     <link
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css"
@@ -31,38 +34,67 @@
   </head>
   <body>
     <div class="container">
-      <div class="profile-header">
-        <div class="profile">
-          <img src="Profilbild.png" alt="Profile Image" />
-          <div class="profile-info">
-            <h2>Your Name</h2>
-            <p>+49 123 4567890</p>
-            <p>email@example.com</p>
+      <nav class="navbar sticky-top bg-body-tertiary">
+        <div class="container-fluid" class="profile-header">
+          <div class="profile">
+            <img src="Profilbild.png" alt="Profile Image" />
+            <div class="profile-info">
+              <h2 class="Name">Your Name</h2>
+              <h2 class="unternehmensname">Apartment</h2>
+              <div class="profil-ausrichtung">
+                <p class="mobil">M:</p>
+                <p class="mobilnummer">+49 123 4567890</p>
+              </div>
+              <div class="profil-ausrichtung">
+                <p class="email">E:</p>
+                <p class="emailadresse">email@example.com</p>
+              </div>
+            </div>
+          </div>
+          <div class="header">
+            <h1 class="header-main">Apart</h1>
+            <h1 class="header-subtitle">ments</h1>
           </div>
         </div>
-        <div class="header">
-          <h1 class="header-main">Apart</h1>
-          <h1 class="header-subtitle">ments</h1>
-        </div>
-      </div>
-
+      </nav>
       <div class="product">
         <div class="carousel-container">
           <div id="includedContent"></div>
         </div>
         <div class="product-description">
-          <h3>Apartment 1</h3>
-          <div class="icon-text">
-            <img src="BettIcon.png" alt="Beds Icon" />
-            <p>2 Bedrooms</p>
+          <div class="description-header">
+            <div class="straße">
+              <h3>6 Dunraven Street, London W1K 7FD</h3>
+              <div class="flatground">
+                <div class="flat">Flat &nbsp;</div>
+                <div class="groundfloor">(Ground Floor)</div>
+              </div>
+            </div>
+            <div class="preis">
+              <p class="preis1">£3,750 pw</p>
+              <p class="preis2">£16,250 pm</p>
+              <p class="preisqm">£95/ft²</p>
+            </div>
           </div>
-          <div class="icon-text">
-            <img src="QM.png" alt="Size Icon" />
-            <p>85 m²</p>
-          </div>
-          <div class="icon-text">
-            <img src="Bad.png" alt="Bathrooms Icon" />
-            <p>1 Bathroom</p>
+          <div class="flex-container">
+            <div
+              class="icon-text"
+              style="border-right: 1px solid #ddd; padding-right: 18px"
+            >
+              <img src="BettIcon.png" alt="Beds Icon" />
+              <p>2</p>
+            </div>
+            <div
+              class="icon-text"
+              style="border-right: 1px solid #ddd; padding-right: 18px"
+            >
+              <img src="QM.png" alt="Size Icon" />
+              <p>85 m²</p>
+            </div>
+            <div class="icon-text">
+              <img src="Bad.png" alt="Bathrooms Icon" />
+              <p>1</p>
+            </div>
           </div>
           <div class="details">
             <p>Available from: July 1, 2024</p>
@@ -77,17 +109,89 @@
         </div>
         <div class="product-description">
           <h3>Apartment 1</h3>
-          <div class="icon-text">
-            <img src="BettIcon.png" alt="Beds Icon" />
-            <p>2 Bedrooms</p>
+          <div class="flex-container">
+            <div
+              class="icon-text"
+              style="border-right: 1px solid #ddd; padding-right: 18px"
+            >
+              <img src="BettIcon.png" alt="Beds Icon" />
+              <p>2</p>
+            </div>
+            <div
+              class="icon-text"
+              style="border-right: 1px solid #ddd; padding-right: 18px"
+            >
+              <img src="QM.png" alt="Size Icon" />
+              <p>85 m²</p>
+            </div>
+            <div class="icon-text">
+              <img src="Bad.png" alt="Bathrooms Icon" />
+              <p>1</p>
+            </div>
           </div>
-          <div class="icon-text">
-            <img src="QM.png" alt="Size Icon" />
-            <p>85 m²</p>
+          <div class="details">
+            <p>Available from: July 1, 2024</p>
+            <p>Located in downtown area with great amenities.</p>
           </div>
-          <div class="icon-text">
-            <img src="Bad.png" alt="Bathrooms Icon" />
-            <p>1 Bathroom</p>
+        </div>
+      </div>
+      <div class="product">
+        <div class="carousel-container">
+          <div id="includedContent2"></div>
+        </div>
+        <div class="product-description">
+          <h3>Apartment 1</h3>
+          <div class="flex-container">
+            <div
+              class="icon-text"
+              style="border-right: 1px solid #ddd; padding-right: 18px"
+            >
+              <img src="BettIcon.png" alt="Beds Icon" />
+              <p>2</p>
+            </div>
+            <div
+              class="icon-text"
+              style="border-right: 1px solid #ddd; padding-right: 18px"
+            >
+              <img src="QM.png" alt="Size Icon" />
+              <p>85 m²</p>
+            </div>
+            <div class="icon-text">
+              <img src="Bad.png" alt="Bathrooms Icon" />
+              <p>1</p>
+            </div>
+          </div>
+          <div class="details">
+            <p>Available from: July 1, 2024</p>
+            <p>Located in downtown area with great amenities.</p>
+          </div>
+        </div>
+      </div>
+      <div class="product">
+        <div class="carousel-container">
+          <div id="includedContent2"></div>
+        </div>
+        <div class="product-description">
+          <h3>Apartment 1</h3>
+          <div class="flex-container">
+            <div
+              class="icon-text"
+              style="border-right: 1px solid #ddd; padding-right: 18px"
+            >
+              <img src="BettIcon.png" alt="Beds Icon" />
+              <p>2</p>
+            </div>
+            <div
+              class="icon-text"
+              style="border-right: 1px solid #ddd; padding-right: 18px"
+            >
+              <img src="QM.png" alt="Size Icon" />
+              <p>85 m²</p>
+            </div>
+            <div class="icon-text">
+              <img src="Bad.png" alt="Bathrooms Icon" />
+              <p>1</p>
+            </div>
           </div>
           <div class="details">
             <p>Available from: July 1, 2024</p>

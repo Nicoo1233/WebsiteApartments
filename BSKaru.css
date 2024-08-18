@@ -3,8 +3,8 @@
 /* Container für das Karussell */
 .carousel-container {
   flex: 1; /* Damit das Karussell den verfügbaren Platz einnimmt */
-  max-width: 300px; /* Maximale Breite des Karussells */
-  max-height: 200px; /* Maximale Höhe für das Karussell */
+  max-width: 600px; /* Maximale Breite des Karussells */
+  max-height: 400px; /* Maximale Höhe für das Karussell */
   margin-right: 40px;
 }
 
@@ -27,12 +27,4 @@
   min-width: 100%; /* Breite automatisch */
   height: 100%; /* Höhe auf 100% des Container-Höhe setzen */
   object-fit: cover; /* Bild skalieren, um den Container auszufüllen */
-}
-
-/* Stil für die Bilder außerhalb des Karussells */
-.product img {
-  max-width: 300px; /* Maximale Breite für das Bild */
-  max-height: 200px; /* Maximale Höhe für das Bild */
-  object-fit: cover; /* Bild skalieren, um den Container auszufüllen */
-  margin-right: 20px;
 }
