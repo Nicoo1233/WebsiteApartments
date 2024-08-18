@@ -1,0 +1,38 @@
+/* BSKaru.css */
+
+/* Container für das Karussell */
+.carousel-container {
+  flex: 1; /* Damit das Karussell den verfügbaren Platz einnimmt */
+  max-width: 300px; /* Maximale Breite des Karussells */
+  max-height: 200px; /* Maximale Höhe für das Karussell */
+  margin-right: 40px;
+}
+
+/* Container für jedes Karussell-Item */
+.carousel {
+  margin-bottom: 1rem;
+  width: 100%; /* Breite auf 100% setzen */
+}
+
+/* Container für das Karussell-Item */
+.carousel-item {
+  height: 100%; /* Höhe auf 100% des Container-Höhe setzen */
+  display: flex; /* Flexbox für die richtige Positionierung */
+  align-items: center; /* Vertikale Zentrierung */
+  justify-content: center; /* Horizontale Zentrierung */
+}
+
+/* Stil für die Bilder */
+.carousel-item > img {
+  min-width: 100%; /* Breite automatisch */
+  height: 100%; /* Höhe auf 100% des Container-Höhe setzen */
+  object-fit: cover; /* Bild skalieren, um den Container auszufüllen */
+}
+
+/* Stil für die Bilder außerhalb des Karussells */
+.product img {
+  max-width: 300px; /* Maximale Breite für das Bild */
+  max-height: 200px; /* Maximale Höhe für das Bild */
+  object-fit: cover; /* Bild skalieren, um den Container auszufüllen */
+  margin-right: 20px;
+}

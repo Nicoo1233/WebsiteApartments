@@ -1,0 +1,115 @@
+body {
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  background-color: #f7f3e9; /* Light beige */
+  margin: 0;
+  padding: 0;
+}
+
+.header {
+  display: flex;
+  align-items: center; /* Vertikale Ausrichtung */
+  padding: 10px;
+  background-color: #fff;
+}
+.header h1 {
+  font-size: 44px; /* Größere Schriftgröße für die Hauptüberschrift */
+  margin: 0;
+  line-height: 1.2;
+  letter-spacing: 1px; /* Etwas mehr Abstand zwischen den Buchstaben */
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+.header-main {
+  color: #000000; /* Weiß für den Haupttitel */
+}
+
+.header-subtitle {
+  color: #4c4848; /* Helles Grau für den Untertitel */
+}
+
+.container {
+  width: 80%;
+  margin: 0 auto;
+  padding-top: 50px;
+}
+
+.profile {
+  display: flex;
+  align-items: center; /* Vertikale Ausrichtung innerhalb des Profils */
+}
+.profile-header {
+  display: flex;
+  justify-content: space-between; /* Abstand zwischen Profil und Header */
+  align-items: center; /* Vertikale Ausrichtung auf gleicher Höhe */
+  border-bottom: 1px solid #ddd;
+  margin-bottom: 20px;
+}
+
+.profile img {
+  border-radius: 50%;
+  width: 110px;
+  height: 110px;
+  margin-right: 20px;
+  margin-bottom: 10px;
+}
+
+.profile-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.profile-info h2 {
+  font-size: 24px;
+  margin: 0;
+}
+
+.profile-info p {
+  font-size: 18px;
+  color: #555;
+  margin: 5px 0;
+}
+
+.product {
+  display: flex;
+  align-items: center;
+  border: 1px solid #ddd;
+  padding: 20px;
+  margin-bottom: 30px;
+  background-color: #fff;
+  width: 100%;
+}
+
+.product-description {
+  max-width: 600px;
+}
+
+.product-description h3 {
+  font-size: 22px;
+  margin: 0 0 10px 0;
+  font-weight: bold;
+}
+
+.product-description p {
+  font-size: 16px;
+  color: #666;
+  margin: 0;
+}
+
+.details {
+  margin-top: 10px;
+  font-size: 14px;
+  color: #888;
+}
+
+.icon-text {
+  display: flex;
+  align-items: center;
+  margin-bottom: 5px;
+}
+
+.icon-text img {
+  width: 20px;
+  height: 20px;
+  margin-right: 8px;
+}
