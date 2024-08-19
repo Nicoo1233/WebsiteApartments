@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Apartments</title>
+    <link rel="stylesheet" href="BSKaru.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  </head>
+  <body>
+    <!-- Hauptkarussell -->
+    <div id="myCarousel5" class="carousel slide">
+      <ol class="carousel-indicators" id="carouselIndicators5"></ol>
+      <div class="carousel-inner" id="carouselInner5"></div>
+      <a
+        class="carousel-control-prev"
+        href="#myCarousel5"
+        role="button"
+        data-bs-slide="prev"
+      >
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </a>
+      <a
+        class="carousel-control-next"
+        href="#myCarousel5"
+        role="button"
+        data-bs-slide="next"
+      >
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </a>
+    </div>
+
+    <!-- Modal für Bildvergrößerung -->
+    <div
+      class="modal fade"
+      id="imageModal5"
+      tabindex="-1"
+      aria-labelledby="imageModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-body">
+            <div id="modalCarousel5" class="carousel slide">
+              <div class="carousel-inner"></div>
+              <a
+                class="carousel-control-prev"
+                href="#modalCarousel5"
+                role="button"
+                data-bs-slide="prev"
+              >
+                <span
+                  class="carousel-control-prev-icon"
+                  aria-hidden="true"
+                ></span>
+                <span class="visually-hidden">Previous</span>
+              </a>
+              <a
+                class="carousel-control-next"
+                href="#modalCarousel5"
+                role="button"
+                data-bs-slide="next"
+              >
+                <span
+                  class="carousel-control-next-icon"
+                  aria-hidden="true"
+                ></span>
+                <span class="visually-hidden">Next</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      // Bildquellen für das Karussell
+      const imageSources5 = [
+        "Apartment5/B1.jpg",
+        "Apartment5/B2.jpg",
+        "Apartment5/B3.jpg",
+        "Apartment5/B4.jpg",
+        "Apartment5/B5.jpg",
+        "Apartment5/B6.jpg",
+        "Apartment5/B7.jpg",
+        "Apartment5/B8.jpg",
+        "Apartment5/B9.jpg",
+      ];
+
+      // Dynamisches Erzeugen des Hauptkarussells
+      const carouselIndicators5 = document.getElementById(
+        "carouselIndicators5"
+      );
+      const carouselInner5 = document.getElementById("carouselInner5");
+
+      imageSources5.forEach((src, index) => {
+        // Erstellen des Indikators
+        const indicator5 = document.createElement("li");
+        indicator5.setAttribute("data-bs-target", "#myCarousel5");
+        indicator5.setAttribute("data-bs-slide-to", index);
+        if (index === 0) indicator5.classList.add("active");
+        carouselIndicators5.appendChild(indicator5);
+
+        // Erstellen des Karussellitems
+        const item5 = document.createElement("div");
+        item5.className = `carousel-item${index === 0 ? " active" : ""}`;
+        item5.innerHTML = `
+        <img src="${src}" class="d-block w-100" onclick="openModal5(${index})" alt="Apartment ${
+          index + 1
+        }">
+      `;
+        carouselInner5.appendChild(item5);
+      });
+
+      // Dynamisches Erzeugen des Modal-Karussells
+      const modalCarouselInner5 = document.querySelector(
+        "#modalCarousel5 .carousel-inner"
+      );
+      imageSources5.forEach((src, index) => {
+        const item5 = document.createElement("div");
+        item5.className = `carousel-item${index === 0 ? " active" : ""}`;
+        item5.innerHTML = `
+        <img src="${src}" class="d-block w-100" alt="Vergrößertes Bild">
+      `;
+        modalCarouselInner5.appendChild(item5);
+      });
+
+      // Funktion zum Öffnen des Modals
+      function openModal5(index) {
+        const modalCarousel5 = document.querySelector("#modalCarousel5");
+        const modalCarouselInner5 =
+          modalCarousel5.querySelector(".carousel-inner");
+
+        // Leeren des Modal-Karussells
+        modalCarouselInner5.innerHTML = "";
+
+        // Erneutes Erzeugen des Modal-Karussells mit dem richtigen Bild aktiv
+        imageSources5.forEach((src, i) => {
+          const item5 = document.createElement("div");
+          item5.className = `carousel-item${i === index ? " active" : ""}`;
+          item5.innerHTML = `
+          <img src="${src}" class="d-block w-100" alt="Vergrößertes Bild">
+        `;
+          modalCarouselInner5.appendChild(item5);
+        });
+
+        // Öffnen des Modals
+        const modal5 = new bootstrap.Modal(
+          document.getElementById("imageModal5")
+        );
+        modal5.show();
+
+        // Initialisiere oder hole die Karussell-Instanz für das Modal-Karussell 2
+        let modalCarouselInstance5 =
+          bootstrap.Carousel.getInstance(modalCarousel5);
+
+        if (modalCarouselInstance5) {
+          modalCarouselInstance5.to(index); // Wechselt zu dem Bild im Modal-Karussell
+        } else {
+          modalCarouselInstance5 = new bootstrap.Carousel(modalCarousel5, {
+            interval: false, // Verhindert automatisches Wechseln der Bilder
+          });
+          modalCarouselInstance5.to(index); // Wechselt zu dem Bild im Modal-Karussell
+        }
+      }
+    </script>
+  </body>
+</html>

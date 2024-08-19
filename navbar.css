@@ -1,5 +1,4 @@
 .navbar {
-  background-color: #ffffff; /* Wähle die gewünschte Hintergrundfarbe */
   transition: background-color 0.3s; /* Optional: für einen sanften Übergang */
   border-bottom: 1px solid #ddd;
 }
