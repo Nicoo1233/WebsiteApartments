@@ -24,19 +24,21 @@
   display: flex;
   align-items: center; /* Vertikale Ausrichtung innerhalb des Profils */
 }
+
 .profile-header {
   display: flex;
   justify-content: space-between; /* Abstand zwischen Profil und Header */
   align-items: center; /* Vertikale Ausrichtung auf gleicher Höhe */
   border-bottom: 1px solid #ddd;
   margin-bottom: 20px;
+  width: 100%;
 }
 
 .profile img {
   width: 218px;
   height: 99px;
   margin-bottom: 10px;
-  margin-right: 10px;
+  margin-right: 20px;
 }
 
 .profile-info {
@@ -44,17 +46,13 @@
   margin-right: 17px;
   margin-left: 10px;
   flex-direction: column;
-  font-family: "font-family: Baskerville, " Baskerville Old Face ", " Hoefler
-    Text ", Garamond, " Times New Roman
-    ", serif; font-size: 24px; font-style: normal; font-variant: normal; font-weight: 700; line-height: 26.4px; } h3 { font-family: Baskerville, "
-    Baskerville Old Face ", " Hoefler Text ", Garamond, " Times New Roman
-    ", serif; font-size: 14px; font-style: normal; font-variant: normal; font-weight: 700; line-height: 15.4px; } p { font-family: Baskerville, "
-    Baskerville Old Face ", " Hoefler Text ", Garamond, " Times New Roman
-    ", serif; font-size: 14px; font-style: normal; font-variant: normal; font-weight: 400; line-height: 20px; } blockquote { font-family: Baskerville, "
-    Baskerville Old Face ", " Hoefler Text ", Garamond, " Times New Roman
-    ", serif; font-size: 21px; font-style: normal; font-variant: normal; font-weight: 400; line-height: 30px; } pre { font-family: Baskerville, "
-    Baskerville Old Face ", " Hoefler Text ", Garamond, " Times New Roman
-    ", serif; font-size: 13px; font-style: normal; font-variant: normal; font-weight: 400; line-height: 18.57143px;";
+  font-family: "Baskerville", "Baskerville Old Face", "Hoefler Text", Garamond,
+    "Times New Roman", serif;
+}
+@media (max-width: 1000px) {
+  .profile-info {
+    display: none;
+  }
 }
 
 .profile-info h2 {

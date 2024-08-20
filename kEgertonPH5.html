@@ -82,15 +82,15 @@
     <script>
       // Bildquellen für das Karussell
       const imageSources5 = [
-        "Apartment5/B1.jpg",
-        "Apartment5/B2.jpg",
-        "Apartment5/B3.jpg",
-        "Apartment5/B4.jpg",
-        "Apartment5/B5.jpg",
-        "Apartment5/B6.jpg",
-        "Apartment5/B7.jpg",
-        "Apartment5/B8.jpg",
-        "Apartment5/B9.jpg",
+        "EgertonPH5/B1.jpg",
+        "EgertonPH5/B2.jpg",
+        "EgertonPH5/B3.jpg",
+        "EgertonPH5/B4.jpg",
+        "EgertonPH5/B5.jpg",
+        "EgertonPH5/B6.jpg",
+        "EgertonPH5/B7.jpg",
+        "EgertonPH5/B8.jpg",
+        "EgertonPH5/B9.jpg",
       ];
 
       // Dynamisches Erzeugen des Hauptkarussells
@@ -101,21 +101,22 @@
 
       imageSources5.forEach((src, index) => {
         // Erstellen des Indikators
-        const indicator5 = document.createElement("li");
-        indicator5.setAttribute("data-bs-target", "#myCarousel5");
-        indicator5.setAttribute("data-bs-slide-to", index);
-        if (index === 0) indicator5.classList.add("active");
-        carouselIndicators5.appendChild(indicator5);
+        const indicator = document.createElement("button");
+        indicator.setAttribute("type", "button");
+        indicator.setAttribute("data-bs-target", "#myCarousel5");
+        indicator.setAttribute("data-bs-slide-to", index);
+        if (index === 0) indicator.classList.add("active");
+        carouselIndicators5.appendChild(indicator);
 
         // Erstellen des Karussellitems
-        const item5 = document.createElement("div");
-        item5.className = `carousel-item${index === 0 ? " active" : ""}`;
-        item5.innerHTML = `
-        <img src="${src}" class="d-block w-100" onclick="openModal5(${index})" alt="Apartment ${
+        const item = document.createElement("div");
+        item.className = `carousel-item${index === 0 ? " active" : ""}`;
+        item.innerHTML = `
+          <img src="${src}" class="d-block w-100" onclick="openModal5(${index})" alt="Apartment ${
           index + 1
         }">
-      `;
-        carouselInner5.appendChild(item5);
+        `;
+        carouselInner5.appendChild(item);
       });
 
       // Dynamisches Erzeugen des Modal-Karussells
@@ -123,50 +124,48 @@
         "#modalCarousel5 .carousel-inner"
       );
       imageSources5.forEach((src, index) => {
-        const item5 = document.createElement("div");
-        item5.className = `carousel-item${index === 0 ? " active" : ""}`;
-        item5.innerHTML = `
-        <img src="${src}" class="d-block w-100" alt="Vergrößertes Bild">
-      `;
-        modalCarouselInner5.appendChild(item5);
+        const item = document.createElement("div");
+        item.className = `carousel-item${index === 0 ? " active" : ""}`;
+        item.innerHTML = `
+          <img src="${src}" class="d-block w-100" alt="Vergrößertes Bild">
+        `;
+        modalCarouselInner5.appendChild(item);
       });
 
       // Funktion zum Öffnen des Modals
       function openModal5(index) {
-        const modalCarousel5 = document.querySelector("#modalCarousel5");
+        const modalCarousel = document.querySelector("#modalCarousel5");
         const modalCarouselInner5 =
-          modalCarousel5.querySelector(".carousel-inner");
+          modalCarousel.querySelector(".carousel-inner");
 
         // Leeren des Modal-Karussells
         modalCarouselInner5.innerHTML = "";
 
         // Erneutes Erzeugen des Modal-Karussells mit dem richtigen Bild aktiv
         imageSources5.forEach((src, i) => {
-          const item5 = document.createElement("div");
-          item5.className = `carousel-item${i === index ? " active" : ""}`;
-          item5.innerHTML = `
-          <img src="${src}" class="d-block w-100" alt="Vergrößertes Bild">
-        `;
-          modalCarouselInner5.appendChild(item5);
+          const item = document.createElement("div");
+          item.className = `carousel-item${i === index ? " active" : ""}`;
+          item.innerHTML = `
+            <img src="${src}" class="d-block w-100" alt="Vergrößertes Bild">
+          `;
+          modalCarouselInner5.appendChild(item);
         });
 
         // Öffnen des Modals
-        const modal5 = new bootstrap.Modal(
+        const modal = new bootstrap.Modal(
           document.getElementById("imageModal5")
         );
-        modal5.show();
+        modal.show();
 
-        // Initialisiere oder hole die Karussell-Instanz für das Modal-Karussell 2
-        let modalCarouselInstance5 =
-          bootstrap.Carousel.getInstance(modalCarousel5);
-
-        if (modalCarouselInstance5) {
-          modalCarouselInstance5.to(index); // Wechselt zu dem Bild im Modal-Karussell
+        // Nach dem Öffnen des Modals auf das richtige Bild setzen
+        const modalCarouselInstance =
+          bootstrap.Carousel.getInstance(modalCarousel);
+        if (modalCarouselInstance) {
+          modalCarouselInstance.to(index); // Wechselt zu dem Bild im Modal-Karussell
         } else {
-          modalCarouselInstance5 = new bootstrap.Carousel(modalCarousel5, {
+          new bootstrap.Carousel(modalCarousel, {
             interval: false, // Verhindert automatisches Wechseln der Bilder
-          });
-          modalCarouselInstance5.to(index); // Wechselt zu dem Bild im Modal-Karussell
+          }).to(index); // Wechselt zu dem Bild im Modal-Karussell
         }
       }
     </script>

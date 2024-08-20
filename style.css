@@ -1,179 +1,141 @@
+/* Allgemeine Einstellungen */
 body {
-  font-family: "font-family: Baskerville, " Baskerville Old Face ", " Hoefler
-    Text ", Garamond, " Times New Roman
-    ", serif; font-size: 24px; font-style: normal; font-variant: normal; font-weight: 700; line-height: 26.4px; } h3 { font-family: Baskerville, "
-    Baskerville Old Face ", " Hoefler Text ", Garamond, " Times New Roman
-    ", serif; font-size: 14px; font-style: normal; font-variant: normal; font-weight: 700; line-height: 15.4px; } p { font-family: Baskerville, "
-    Baskerville Old Face ", " Hoefler Text ", Garamond, " Times New Roman
-    ", serif; font-size: 14px; font-style: normal; font-variant: normal; font-weight: 400; line-height: 20px; } blockquote { font-family: Baskerville, "
-    Baskerville Old Face ", " Hoefler Text ", Garamond, " Times New Roman
-    ", serif; font-size: 21px; font-style: normal; font-variant: normal; font-weight: 400; line-height: 30px; } pre { font-family: Baskerville, "
-    Baskerville Old Face ", " Hoefler Text ", Garamond, " Times New Roman
-    ", serif; font-size: 13px; font-style: normal; font-variant: normal; font-weight: 400; line-height: 18.57143px;";
-  background-color: rgb(7, 25, 43); /* Light beige */
+  font-family: "Baskerville", "Baskerville Old Face", "Hoefler Text", Garamond,
+    "Times New Roman", serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 1.75;
   margin: 0;
   padding: 0;
+  background-color: rgb(7, 25, 43);
 }
 
+/* Überschriften und Text */
+h3,
+p,
+blockquote,
+pre {
+  font-family: "Baskerville", "Baskerville Old Face", "Hoefler Text", Garamond,
+    "Times New Roman", serif;
+}
+
+h3 {
+  font-size: 1.2rem;
+  line-height: 1.3;
+}
+
+p {
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+blockquote {
+  font-size: 1.4rem;
+  line-height: 2;
+}
+
+pre {
+  font-size: 0.9rem;
+  line-height: 1.3;
+}
+
+/* Header */
 .header {
   display: flex;
-  align-items: center; /* Vertikale Ausrichtung */
-  padding: 10px;
+  align-items: center;
+  padding: 1rem;
   background-color: transparent;
+  text-align: right;
+  font-family: "Baskerville", "Baskerville Old Face", "Hoefler Text", Garamond,
+    "Times New Roman", serif;
 }
-@media (max-width: 768px) {
+@media (max-width: 1280px) {
   .header {
     display: none;
   }
 }
+
 .header h1 {
-  font-size: 30px; /* Größere Schriftgröße für die Hauptüberschrift */
-  background-color: transparent;
+  font-size: 2rem;
   line-height: 1.2;
-  letter-spacing: 1px; /* Etwas mehr Abstand zwischen den Buchstaben */
-  font-family: "font-family: Baskerville, " Baskerville Old Face ", " Hoefler
-    Text ", Garamond, " Times New Roman
-    ", serif; font-size: 24px; font-style: normal; font-variant: normal; font-weight: 700; line-height: 26.4px; } h3 { font-family: Baskerville, "
-    Baskerville Old Face ", " Hoefler Text ", Garamond, " Times New Roman
-    ", serif; font-size: 14px; font-style: normal; font-variant: normal; font-weight: 700; line-height: 15.4px; } p { font-family: Baskerville, "
-    Baskerville Old Face ", " Hoefler Text ", Garamond, " Times New Roman
-    ", serif; font-size: 14px; font-style: normal; font-variant: normal; font-weight: 400; line-height: 20px; } blockquote { font-family: Baskerville, "
-    Baskerville Old Face ", " Hoefler Text ", Garamond, " Times New Roman
-    ", serif; font-size: 21px; font-style: normal; font-variant: normal; font-weight: 400; line-height: 30px; } pre { font-family: Baskerville, "
-    Baskerville Old Face ", " Hoefler Text ", Garamond, " Times New Roman
-    ", serif; font-size: 13px; font-style: normal; font-variant: normal; font-weight: 400; line-height: 18.57143px;";
+  letter-spacing: 1px;
 }
+
 .header-main {
-  color: #7a7474; /* Weiß für den Haupttitel */
+  color: #7a7474;
 }
 
 .header-subtitle {
-  color: #7a7474; /* Helles Grau für den Untertitel */
+  color: #7a7474;
 }
 
+/* Container */
 .container {
   width: 80%;
+  max-width: 1200px;
   margin: 0 auto;
 }
 
+/* Produkt Layout */
 .product {
   display: flex;
   border: 1px solid #ddd;
-  padding: 10px;
-  margin-bottom: 30px;
+  padding: 1rem;
+  margin-bottom: 2rem;
   background-color: #fff;
-  width: 100%;
-  flex-wrap: wrap;
+  flex-wrap: nowrap; /* Beibehaltung des Layouts nebeneinander */
+  justify-content: space-between;
 }
 
+/* Beschreibung */
 .product-description {
-  flex-wrap: wrap;
-  min-width: 60%;
+  flex: 1;
   margin: 0;
-  font-family: "font-family: Baskerville, " Baskerville Old Face ", " Hoefler
-    Text ", Garamond, " Times New Roman
-    ", serif; font-size: 24px; font-style: normal; font-variant: normal; font-weight: 700; line-height: 26.4px; } h3 { font-family: Baskerville, "
-    Baskerville Old Face ", " Hoefler Text ", Garamond, " Times New Roman
-    ", serif; font-size: 14px; font-style: normal; font-variant: normal; font-weight: 700; line-height: 15.4px; } p { font-family: Baskerville, "
-    Baskerville Old Face ", " Hoefler Text ", Garamond, " Times New Roman
-    ", serif; font-size: 14px; font-style: normal; font-variant: normal; font-weight: 400; line-height: 20px; } blockquote { font-family: Baskerville, "
-    Baskerville Old Face ", " Hoefler Text ", Garamond, " Times New Roman
-    ", serif; font-size: 21px; font-style: normal; font-variant: normal; font-weight: 400; line-height: 30px; } pre { font-family: Baskerville, "
-    Baskerville Old Face ", " Hoefler Text ", Garamond, " Times New Roman
-    ", serif; font-size: 13px; font-style: normal; font-variant: normal; font-weight: 400; line-height: 18.57143px;";
+  font-size: 1rem;
 }
 
-.product-description h3 {
-  font-size: 22px;
-  margin: 0 0 0 0;
-  font-family: "font-family: Baskerville, " Baskerville Old Face ", " Hoefler
-    Text ", Garamond, " Times New Roman
-    ", serif; font-size: 24px; font-style: normal; font-variant: normal; font-weight: 700; line-height: 26.4px; } h3 { font-family: Baskerville, "
-    Baskerville Old Face ", " Hoefler Text ", Garamond, " Times New Roman
-    ", serif; font-size: 14px; font-style: normal; font-variant: normal; font-weight: 700; line-height: 15.4px; } p { font-family: Baskerville, "
-    Baskerville Old Face ", " Hoefler Text ", Garamond, " Times New Roman
-    ", serif; font-size: 14px; font-style: normal; font-variant: normal; font-weight: 400; line-height: 20px; } blockquote { font-family: Baskerville, "
-    Baskerville Old Face ", " Hoefler Text ", Garamond, " Times New Roman
-    ", serif; font-size: 21px; font-style: normal; font-variant: normal; font-weight: 400; line-height: 30px; } pre { font-family: Baskerville, "
-    Baskerville Old Face ", " Hoefler Text ", Garamond, " Times New Roman
-    ", serif; font-size: 13px; font-style: normal; font-variant: normal; font-weight: 400; line-height: 18.57143px;";
-}
-
-.icon-text {
+/* Preis und Straße */
+.description-header {
   display: flex;
-  flex-direction: row; /* Ändert die Richtung der Flex-Elemente zu nebeneinander */
-  gap: 5px;
-  margin: 0; /* Kein zusätzlicher Außenabstand */
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: 1rem;
 }
 
-.icon-text img {
-  display: block;
-  width: 24px;
-  height: 20px;
-  margin: 0;
-}
-.flex-container {
-  display: flex; /* Verwenden von Flexbox für die Container-Anordnung */
-  gap: 20px; /* Abstand zwischen den Items */
+.straße {
+  flex-grow: 1;
+  font-family: "Baskerville", "Baskerville Old Face", "Hoefler Text", Garamond,
+    "Times New Roman", serif;
 }
 
-.icon-text p {
-  margin: 0;
-  padding: 0;
-}
 .preis {
   display: flex;
-  flex-direction: column; /* Preise werden in zwei Zeilen dargestellt */
-  text-align: right; /* Preise werden rechtsbündig dargestellt */
-  align-items: flex-end; /* Preise werden ganz rechts im Container positioniert */
-}
-
-.description-header {
-  flex-wrap: wrap;
-  display: flex;
-  justify-content: space-between; /* Stellt sicher, dass Straße links und Preis rechts stehen */
-  width: 100%; /* Nimmt die volle Breite des Containers ein */
-}
-@media (max-width: 800px) {
-  .preis {
-    align-items: flex-start; /* Links ausrichten, wenn der Platz begrenzt ist */
-  }
-}
-.straße {
-  flex-grow: 1; /* Straße nimmt so viel Platz wie möglich ein */
-}
-.preis1 {
-  margin: 0;
-  font-size: 20px !important;
-  color: #000000 !important;
-}
-.preis2 {
-  margin: 0;
-  font-size: 20px !important;
-  color: #000000 !important;
-}
-.preisqm {
-  margin: 0;
-  font-size: 15px !important;
-}
-
-.flatground {
-  display: flex;
-  margin-top: 15px;
-  margin-bottom: 20px;
-}
-.dick {
-  color: #000000;
-  font-weight: lighter;
-  font-size: 15px;
-}
-.hell {
-  color: #7a7474;
-  font-size: 15px;
+  flex-direction: column;
+  text-align: right;
 }
 .details {
-  margin-top: 12px;
   display: flex;
+  font-family: "Baskerville", "Baskerville Old Face", "Hoefler Text", Garamond,
+    "Times New Roman", serif;
+}
+
+/* Flexbox und Items */
+.icon-text {
+  display: flex;
+  gap: 0.5rem;
+  border-right: 1px solid #ddd;
+  padding-right: 18px;
+  align-items: center;
+  margin-bottom: 20px;
+  height: 35px;
+}
+
+.flex-container {
+  display: flex;
+  gap: 1.25rem;
+  flex-wrap: nowrap; /* Kein Umbruch der Elemente */
+  align-items: center;
+  text-align: center;
 }
 .items {
   display: flex;
@@ -186,13 +148,30 @@ body {
   align-items: flex-start; /* Preise werden ganz rechts im Container positioniert */
   padding-top: 37px;
 }
-.items img {
+/* Festgelegte Größe für img-Elemente */
+.icon-text img {
   display: block;
-  width: 30px;
-  height: 30px;
+  width: 24px;
+  height: 20px;
   margin: 0;
 }
+.icon-text p {
+  margin: 0;
+}
+.beschriftung-icons {
+  font-size: 10px;
+  margin-left: -40px;
+  margin-top: 13px;
+  font-family: "Baskerville", "Baskerville Old Face", "Hoefler Text", Garamond,
+    "Times New Roman", serif;
+}
 
+.items img {
+  display: block;
+  width: 25px;
+  height: 25px;
+  margin: 0;
+}
 .icon-button {
   border: none;
   color: white;
@@ -202,57 +181,96 @@ body {
   background-color: transparent;
 }
 .button-wrapper {
+  width: 64px;
   position: relative;
   display: inline-block;
-}
-
-.tooltip {
-  visibility: hidden;
-  background-color: white;
-  color: black;
-  text-align: center;
-  padding: 6px 10px; /* Kleinere Polsterung */
-  border-radius: 4px;
-  position: absolute;
-  top: 110%; /* Positioniert die Sprechblase unter dem Button */
-  left: 50%;
-  transform: translateX(-50%);
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Leichter Schatten */
-  opacity: 0;
-  transition: opacity 0.3s ease;
-  white-space: nowrap; /* Verhindert Zeilenumbruch */
-  font-size: 12px; /* Kleinere Schriftgröße */
-  z-index: 10;
 }
 
 .button-wrapper:hover .tooltip {
   visibility: visible;
   opacity: 1;
+  width: 85px;
+  position: absolute;
+}
+
+/* Responsive Design mit Media Queries */
+@media (max-width: 1200px) {
+  .container {
+    width: 90%;
+  }
+
+  .product {
+    flex-wrap: wrap; /* Produkte erst auf kleineren Bildschirmen umbrechen */
+  }
+
+  .description-header {
+    flex-direction: column;
+    text-align: left;
+  }
+
+  .preis {
+    text-align: left;
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 768px) {
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  h3 {
+    font-size: 1rem;
+  }
+
+  .product-description {
+    font-size: 0.9rem;
+  }
+
+  .description-header {
+    flex-direction: column;
+  }
+
+  .preis {
+    align-items: flex-start;
+  }
+
+  .product {
+    flex-direction: column; /* Jetzt stapeln bei sehr kleinen Bildschirmen */
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 1.25rem;
+  }
+
+  h3 {
+    font-size: 0.9rem;
+  }
+
+  .product-description {
+    font-size: 0.8rem;
+  }
+}
+
+/* Tooltip */
+.tooltip {
+  background-color: white;
+  color: black;
+  padding: 0.4rem 0.6rem;
+  font-size: 0.8rem;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  z-index: 10;
+  position: absolute;
 }
 
 .tooltip::after {
-  content: "";
-  position: absolute;
-  top: -5px; /* Spitze der Sprechblase */
-  left: 50%;
-  transform: translateX(-50%);
   border-width: 5px;
-  border-style: solid;
-  border-color: transparent transparent white transparent; /* Weißer Dreieck-Pfeil nach oben */
+  border-color: transparent transparent white transparent;
 }
-.beschriftung-icons {
-  font-size: 10px;
-  margin-left: -14px;
-  margin-top: 13px;
-  font-family: "font-family: Baskerville, " Baskerville Old Face ", " Hoefler
-    Text ", Garamond, " Times New Roman
-    ", serif; font-size: 24px; font-style: normal; font-variant: normal; font-weight: 700; line-height: 26.4px; } h3 { font-family: Baskerville, "
-    Baskerville Old Face ", " Hoefler Text ", Garamond, " Times New Roman
-    ", serif; font-size: 14px; font-style: normal; font-variant: normal; font-weight: 700; line-height: 15.4px; } p { font-family: Baskerville, "
-    Baskerville Old Face ", " Hoefler Text ", Garamond, " Times New Roman
-    ", serif; font-size: 14px; font-style: normal; font-variant: normal; font-weight: 400; line-height: 20px; } blockquote { font-family: Baskerville, "
-    Baskerville Old Face ", " Hoefler Text ", Garamond, " Times New Roman
-    ", serif; font-size: 21px; font-style: normal; font-variant: normal; font-weight: 400; line-height: 30px; } pre { font-family: Baskerville, "
-    Baskerville Old Face ", " Hoefler Text ", Garamond, " Times New Roman
-    ", serif; font-size: 13px; font-style: normal; font-variant: normal; font-weight: 400; line-height: 18.57143px;";
+.flatground {
+  display: flex;
+  margin-top: 15px;
+  margin-bottom: 20px;
 }

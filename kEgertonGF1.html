@@ -101,16 +101,19 @@
       ];
 
       // Dynamisches Erzeugen des Hauptkarussells
-      const carouselIndicators = document.getElementById("carouselIndicators1");
-      const carouselInner = document.getElementById("carouselInner1");
+      const carouselIndicators1 = document.getElementById(
+        "carouselIndicators1"
+      );
+      const carouselInner1 = document.getElementById("carouselInner1");
 
       imageSources1.forEach((src, index) => {
         // Erstellen des Indikators
-        const indicator = document.createElement("li");
+        const indicator = document.createElement("button");
+        indicator.setAttribute("type", "button");
         indicator.setAttribute("data-bs-target", "#myCarousel1");
         indicator.setAttribute("data-bs-slide-to", index);
         if (index === 0) indicator.classList.add("active");
-        carouselIndicators.appendChild(indicator);
+        carouselIndicators1.appendChild(indicator);
 
         // Erstellen des Karussellitems
         const item = document.createElement("div");
@@ -120,11 +123,11 @@
           index + 1
         }">
         `;
-        carouselInner.appendChild(item);
+        carouselInner1.appendChild(item);
       });
 
       // Dynamisches Erzeugen des Modal-Karussells
-      const modalCarouselInner = document.querySelector(
+      const modalCarouselInner1 = document.querySelector(
         "#modalCarousel1 .carousel-inner"
       );
       imageSources1.forEach((src, index) => {
@@ -133,17 +136,17 @@
         item.innerHTML = `
           <img src="${src}" class="d-block w-100" alt="Vergrößertes Bild">
         `;
-        modalCarouselInner.appendChild(item);
+        modalCarouselInner1.appendChild(item);
       });
 
       // Funktion zum Öffnen des Modals
       function openModal1(index) {
         const modalCarousel = document.querySelector("#modalCarousel1");
-        const modalCarouselInner =
+        const modalCarouselInner1 =
           modalCarousel.querySelector(".carousel-inner");
 
         // Leeren des Modal-Karussells
-        modalCarouselInner.innerHTML = "";
+        modalCarouselInner1.innerHTML = "";
 
         // Erneutes Erzeugen des Modal-Karussells mit dem richtigen Bild aktiv
         imageSources1.forEach((src, i) => {
@@ -152,7 +155,7 @@
           item.innerHTML = `
             <img src="${src}" class="d-block w-100" alt="Vergrößertes Bild">
           `;
-          modalCarouselInner.appendChild(item);
+          modalCarouselInner1.appendChild(item);
         });
 
         // Öffnen des Modals

@@ -103,21 +103,22 @@
 
       imageSources4.forEach((src, index) => {
         // Erstellen des Indikators
-        const indicator4 = document.createElement("li");
-        indicator4.setAttribute("data-bs-target", "#myCarousel4");
-        indicator4.setAttribute("data-bs-slide-to", index);
-        if (index === 0) indicator4.classList.add("active");
-        carouselIndicators4.appendChild(indicator4);
+        const indicator = document.createElement("button");
+        indicator.setAttribute("type", "button");
+        indicator.setAttribute("data-bs-target", "#myCarousel4");
+        indicator.setAttribute("data-bs-slide-to", index);
+        if (index === 0) indicator.classList.add("active");
+        carouselIndicators4.appendChild(indicator);
 
         // Erstellen des Karussellitems
-        const item4 = document.createElement("div");
-        item4.className = `carousel-item${index === 0 ? " active" : ""}`;
-        item4.innerHTML = `
-        <img src="${src}" class="d-block w-100" onclick="openModal4(${index})" alt="Apartment ${
+        const item = document.createElement("div");
+        item.className = `carousel-item${index === 0 ? " active" : ""}`;
+        item.innerHTML = `
+          <img src="${src}" class="d-block w-100" onclick="openModal4(${index})" alt="Apartment ${
           index + 1
         }">
-      `;
-        carouselInner4.appendChild(item4);
+        `;
+        carouselInner4.appendChild(item);
       });
 
       // Dynamisches Erzeugen des Modal-Karussells
@@ -125,50 +126,48 @@
         "#modalCarousel4 .carousel-inner"
       );
       imageSources4.forEach((src, index) => {
-        const item4 = document.createElement("div");
-        item4.className = `carousel-item${index === 0 ? " active" : ""}`;
-        item4.innerHTML = `
-        <img src="${src}" class="d-block w-100" alt="Vergrößertes Bild">
-      `;
-        modalCarouselInner4.appendChild(item4);
+        const item = document.createElement("div");
+        item.className = `carousel-item${index === 0 ? " active" : ""}`;
+        item.innerHTML = `
+          <img src="${src}" class="d-block w-100" alt="Vergrößertes Bild">
+        `;
+        modalCarouselInner4.appendChild(item);
       });
 
       // Funktion zum Öffnen des Modals
       function openModal4(index) {
-        const modalCarousel4 = document.querySelector("#modalCarousel4");
+        const modalCarousel = document.querySelector("#modalCarousel4");
         const modalCarouselInner4 =
-          modalCarousel4.querySelector(".carousel-inner");
+          modalCarousel.querySelector(".carousel-inner");
 
         // Leeren des Modal-Karussells
         modalCarouselInner4.innerHTML = "";
 
         // Erneutes Erzeugen des Modal-Karussells mit dem richtigen Bild aktiv
         imageSources4.forEach((src, i) => {
-          const item4 = document.createElement("div");
-          item4.className = `carousel-item${i === index ? " active" : ""}`;
-          item4.innerHTML = `
-          <img src="${src}" class="d-block w-100" alt="Vergrößertes Bild">
-        `;
-          modalCarouselInner4.appendChild(item4);
+          const item = document.createElement("div");
+          item.className = `carousel-item${i === index ? " active" : ""}`;
+          item.innerHTML = `
+            <img src="${src}" class="d-block w-100" alt="Vergrößertes Bild">
+          `;
+          modalCarouselInner4.appendChild(item);
         });
 
         // Öffnen des Modals
-        const modal4 = new bootstrap.Modal(
+        const modal = new bootstrap.Modal(
           document.getElementById("imageModal4")
         );
-        modal4.show();
+        modal.show();
 
-        // Initialisiere oder hole die Karussell-Instanz für das Modal-Karussell 2
-        let modalCarouselInstance4 =
-          bootstrap.Carousel.getInstance(modalCarousel4);
-
-        if (modalCarouselInstance4) {
-          modalCarouselInstance4.to(index); // Wechselt zu dem Bild im Modal-Karussell
+        // Nach dem Öffnen des Modals auf das richtige Bild setzen
+        const modalCarouselInstance =
+          bootstrap.Carousel.getInstance(modalCarousel);
+        if (modalCarouselInstance) {
+          modalCarouselInstance.to(index); // Wechselt zu dem Bild im Modal-Karussell
         } else {
-          modalCarouselInstance4 = new bootstrap.Carousel(modalCarousel4, {
+          new bootstrap.Carousel(modalCarousel, {
             interval: false, // Verhindert automatisches Wechseln der Bilder
-          });
-          modalCarouselInstance4.to(index); // Wechselt zu dem Bild im Modal-Karussell
+          }).to(index); // Wechselt zu dem Bild im Modal-Karussell
         }
       }
     </script>

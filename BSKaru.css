@@ -84,3 +84,6 @@
 .carousel-item-prev {
   opacity: 0;
 }
+.carousel-indicators button::before {
+  content: "";
+}

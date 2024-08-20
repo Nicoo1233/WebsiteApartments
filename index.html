@@ -21,8 +21,8 @@
         $("#includedContent2").load("kCadoganGF2.html");
         $("#includedContent3").load("kEgertonFF3.html");
         $("#includedContent4").load("kQueensgatePH4.html");
-        $("#includedContent5").load("karusell5.html");
-        $("#includedContent6").load("karusell6.html");
+        $("#includedContent5").load("kEgertonPH5.html");
+        $("#includedContent6").load("kMilnerH6.html");
         $("#includedContent7").load("kEgertonLG7.html");
       });
     </script>
@@ -121,7 +121,7 @@
   <body style="background-color: rgb(248, 249, 250)">
     <div class="container">
       <nav class="navbar sticky-top bg-body-tertiary">
-        <div class="container-fluid" class="profile-header">
+        <div class="profile-header">
           <div class="profile">
             <img src="Logo.png" alt="Profile Image" />
             <div
@@ -186,17 +186,11 @@
             </div>
           </div>
           <div class="flex-container">
-            <div
-              class="icon-text"
-              style="border-right: 1px solid #ddd; padding-right: 18px"
-            >
+            <div class="icon-text">
               <img src="Icons/BettIcon.png" alt="Beds Icon" />
               <p>3</p>
             </div>
-            <div
-              class="icon-text"
-              style="border-right: 1px solid #ddd; padding-right: 18px"
-            >
+            <div class="icon-text">
               <img src="Icons/QM.png" alt="Size Icon" />
               <p>85 m²</p>
             </div>
@@ -276,7 +270,7 @@
           </div>
         </div>
       </div>
-      <!-- Apartment 2 -->.
+      <!-- Apartment 2 -->
 
       <div class="product">
         <div class="carousel-container">
@@ -332,7 +326,7 @@
             </div>
             <p class="beschriftung-icons">1</p>
             <div class="button-wrapper">
-              <button onclick="googleMaps()" class="icon-button">
+              <button onclick="googleMapsCadogan()" class="icon-button">
                 <img src="Icons/MapsIcon.png" alt="Maps" />
               </button>
               <div class="tooltip">Google Maps</div>
@@ -340,7 +334,7 @@
           </div>
         </div>
       </div>
-      <!-- Apartment 3 -->.
+      <!-- Apartment 3 -->
 
       <div class="product">
         <div class="carousel-container">
@@ -396,7 +390,7 @@
             </div>
             <p class="beschriftung-icons">1</p>
             <div class="button-wrapper">
-              <button onclick="googleMaps()" class="icon-button">
+              <button onclick="googleMapsEgerton()" class="icon-button">
                 <img src="Icons/MapsIcon.png" alt="Maps" />
               </button>
               <div class="tooltip">Google Maps</div>
@@ -404,7 +398,7 @@
           </div>
         </div>
       </div>
-      <!-- Apartment 4 -->.
+      <!-- Apartment 4 -->
 
       <div class="product">
         <div class="carousel-container">
@@ -460,7 +454,7 @@
             </div>
             <p class="beschriftung-icons">0</p>
             <div class="button-wrapper">
-              <button onclick="googleMaps()" class="icon-button">
+              <button onclick="googleMapsQueensGate()" class="icon-button">
                 <img src="Icons/MapsIcon.png" alt="Maps" />
               </button>
               <div class="tooltip">Google Maps</div>
@@ -468,7 +462,7 @@
           </div>
         </div>
       </div>
-      <!-- Apartment 5 -->.
+      <!-- Apartment 5 -->
 
       <div class="product">
         <div class="carousel-container">
@@ -480,7 +474,7 @@
               <h3>10 Egerton Place, London SW3 2EF</h3>
               <div class="flatground">
                 <div class="dick">Flat &nbsp;</div>
-                <div class="hell">(Ground Floor)</div>
+                <div class="hell">(Penthouse)</div>
               </div>
             </div>
           </div>
@@ -490,7 +484,7 @@
               style="border-right: 1px solid #ddd; padding-right: 18px"
             >
               <img src="Icons/BettIcon.png" alt="Beds Icon" />
-              <p>3</p>
+              <p>4</p>
             </div>
             <div
               class="icon-text"
@@ -501,12 +495,12 @@
             </div>
             <div class="icon-text">
               <img src="Icons/Bad.png" alt="Bathrooms Icon" />
-              <p>3</p>
+              <p>2,5</p>
             </div>
           </div>
           <div class="details">
-            <p class="dick">Garden:&nbsp;</p>
-            <p class="hell">Yes</p>
+            <p class="dick">&nbsp;</p>
+            <p class="hell"></p>
           </div>
           <div class="items">
             <div class="button-wrapper">
@@ -522,9 +516,9 @@
               </button>
               <div class="tooltip">Grundriss</div>
             </div>
-            <p class="beschriftung-icons">1</p>
+            <p class="beschriftung-icons">0</p>
             <div class="button-wrapper">
-              <button onclick="googleMaps()" class="icon-button">
+              <button onclick="googleMapsEgerton()" class="icon-button">
                 <img src="Icons/MapsIcon.png" alt="Maps" />
               </button>
               <div class="tooltip">Google Maps</div>
@@ -532,7 +526,7 @@
           </div>
         </div>
       </div>
-      <!-- Apartment 6 -->.
+      <!-- Apartment 6 -->
 
       <div class="product">
         <div class="carousel-container">
@@ -541,10 +535,10 @@
         <div class="product-description">
           <div class="description-header">
             <div class="straße">
-              <h3>10 Egerton Place, London SW3 2EF</h3>
+              <h3>14 Milner St, London SW3 2PU</h3>
               <div class="flatground">
-                <div class="dick">Flat &nbsp;</div>
-                <div class="hell">(Ground Floor)</div>
+                <div class="dick">House &nbsp;</div>
+                <div class="hell"></div>
               </div>
             </div>
           </div>
@@ -554,7 +548,7 @@
               style="border-right: 1px solid #ddd; padding-right: 18px"
             >
               <img src="Icons/BettIcon.png" alt="Beds Icon" />
-              <p>3</p>
+              <p>5</p>
             </div>
             <div
               class="icon-text"
@@ -565,12 +559,12 @@
             </div>
             <div class="icon-text">
               <img src="Icons/Bad.png" alt="Bathrooms Icon" />
-              <p>3</p>
+              <p>5</p>
             </div>
           </div>
           <div class="details">
-            <p class="dick">Garden:&nbsp;</p>
-            <p class="hell">Yes</p>
+            <p class="dick">4 floors&nbsp;</p>
+            <p class="hell"></p>
           </div>
           <div class="items">
             <div class="button-wrapper">
@@ -579,7 +573,7 @@
               </button>
               <div class="tooltip">Bilder</div>
             </div>
-            <p class="beschriftung-icons">16</p>
+            <p class="beschriftung-icons">17</p>
             <div class="button-wrapper">
               <button onclick="googleMaps()" class="icon-button">
                 <img src="Icons/Grundriss.png" alt="Grundriss" />
@@ -588,7 +582,7 @@
             </div>
             <p class="beschriftung-icons">1</p>
             <div class="button-wrapper">
-              <button onclick="googleMaps()" class="icon-button">
+              <button onclick="googleMapsMilner()" class="icon-button">
                 <img src="Icons/MapsIcon.png" alt="Maps" />
               </button>
               <div class="tooltip">Google Maps</div>
@@ -596,7 +590,7 @@
           </div>
         </div>
       </div>
-      <!-- Apartment 7 -->.
+      <!-- Apartment 7 -->
 
       <div class="product">
         <div class="carousel-container">
@@ -652,7 +646,7 @@
             </div>
             <p class="beschriftung-icons">0</p>
             <div class="button-wrapper">
-              <button onclick="googleMaps()" class="icon-button">
+              <button onclick="googleMapsEgerton()" class="icon-button">
                 <img src="Icons/MapsIcon.png" alt="Maps" />
               </button>
               <div class="tooltip">Google Maps</div>
