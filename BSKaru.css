@@ -1,12 +1,20 @@
 /* Container für das Karussell */
 .carousel-container {
+  display: flex;
   margin-right: 25px;
   height: 298px;
   width: 450px; /* Hier kannst du die Größe des Karussells nach Bedarf anpassen */
   position: relative; /* Für die korrekte Positionierung der Karussell-Items */
   overflow: hidden; /* Verhindert, dass Bilder außerhalb des Containers angezeigt werden */
+  align-items: center;
 }
-
+@media (max-width: 1000px) {
+  .carousel-container {
+    width: 100%;
+    height: auto;
+    margin-right: 0px;
+  }
+}
 /* Container für das Karussell */
 .carousel {
   margin-bottom: 1rem;

@@ -49,7 +49,7 @@
   font-family: "Baskerville", "Baskerville Old Face", "Hoefler Text", Garamond,
     "Times New Roman", serif;
 }
-@media (max-width: 1000px) {
+@media (max-width: 992px) {
   .profile-info {
     display: none;
   }
