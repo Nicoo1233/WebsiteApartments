@@ -53,67 +53,139 @@
       }
     </script>
     <script>
-      const imageSourcesegertonGF = [
-        "EgertonGF1/B1.jpeg",
-        "EgertonGF1/B2.jpeg",
-        "EgertonGF1/B3.jpeg",
-        "EgertonGF1/B4.jpeg",
-        "EgertonGF1/B5.jpeg",
-        "EgertonGF1/B6.jpeg",
-        "EgertonGF1/B7.jpeg",
-        "EgertonGF1/B8.jpeg",
-        "EgertonGF1/B10.jpeg",
-        "EgertonGF1/B11.jpeg",
-        "EgertonGF1/B12.jpeg",
-        "EgertonGF1/B13.jpeg",
-        "EgertonGF1/B14.jpeg",
-        "EgertonGF1/B15.jpeg",
-        "EgertonGF1/B16.jpeg",
-      ];
+      const imageSources = {
+        EgertonGF1: [
+          "EgertonGF1/B1.jpeg",
+          "EgertonGF1/B2.jpeg",
+          "EgertonGF1/B3.jpeg",
+          "EgertonGF1/B4.jpeg",
+          "EgertonGF1/B5.jpeg",
+          // Weitere Bilder hier...
+        ],
+        CadoganGF2: [
+          "CadoganGF2/B1.jpg",
+          "CadoganGF2/B2.jpg",
+          "CadoganGF2/B3.jpg",
+          "CadoganGF2/B4.jpg",
+          "CadoganGF2/B5.jpg",
+          "CadoganGF2/B6.jpg",
+          "CadoganGF2/B7.jpg",
+          "CadoganGF2/B8.jpg",
+          "CadoganGF2/B9.jpg",
+          "CadoganGF2/B10.jpg",
+          "CadoganGF2/B11.jpg",
+          "CadoganGF2/B12.jpg",
+        ],
+        EgertonFF3: [
+          "EgertonFF3/B1.jpg",
+          "EgertonFF3/B2.jpg",
+          "EgertonFF3/B3.jpg",
+          "EgertonFF3/B4.jpg",
+          "EgertonFF3/B5.jpg",
+          "EgertonFF3/B6.jpg",
+          "EgertonFF3/B7.jpg",
+          "EgertonFF3/B8.jpg",
+          "EgertonFF3/B9.jpg",
+          "EgertonFF3/B10.jpg",
+          "EgertonFF3/B11.jpg",
+          "EgertonFF3/B12.jpg",
+          "EgertonFF3/B13.jpg",
+          "EgertonFF3/B14.jpg",
+          "EgertonFF3/B15.jpg",
+          "EgertonFF3/B16.jpg",
+          "EgertonFF3/B17.jpg",
+        ],
+        QueensgatePH4: [
+          "QueensgatePH4/B1.jpg",
+          "QueensgatePH4/B2.jpg",
+          "QueensgatePH4/B3.jpg",
+          "QueensgatePH4/B4.jpg",
+          "QueensgatePH4/B5.jpg",
+          "QueensgatePH4/B6.jpg",
+          "QueensgatePH4/B7.jpg",
+          "QueensgatePH4/B8.jpg",
+          "QueensgatePH4/B9.jpg",
+          "QueensgatePH4/B10.jpg",
+          "QueensgatePH4/B11.jpg",
+        ],
+        EgertonPH5: [
+          "EgertonPH5/B1.jpg",
+          "EgertonPH5/B2.jpg",
+          "EgertonPH5/B3.jpg",
+          "EgertonPH5/B4.jpg",
+          "EgertonPH5/B5.jpg",
+          "EgertonPH5/B6.jpg",
+          "EgertonPH5/B7.jpg",
+          "EgertonPH5/B8.jpg",
+          "EgertonPH5/B9.jpg",
+        ],
+        MilnerH6: [
+          "MilnerH6/B1.jpg",
+          "MilnerH6/B2.jpg",
+          "MilnerH6/B3.jpg",
+          "MilnerH6/B4.jpg",
+          "MilnerH6/B5.jpg",
+          "MilnerH6/B6.jpg",
+          "MilnerH6/B7.jpg",
+          "MilnerH6/B8.jpg",
+          "MilnerH6/B9.jpg",
+          "MilnerH6/B10.jpg",
+          "MilnerH6/B11.jpg",
+          "MilnerH6/B12.jpg",
+          "MilnerH6/B13.jpg",
+          "MilnerH6/B14.jpg",
+          "MilnerH6/B15.jpg",
+          "MilnerH6/B16.jpg",
+          "MilnerH6/B17.jpg",
+        ],
+        EgertonLG7: [
+          "EgertonLG7/B1.jpg",
+          "EgertonLG7/B2.jpg",
+          "EgertonLG7/B3.jpg",
+          "EgertonLG7/B4.jpg",
+          "EgertonLG7/B5.jpg",
+          "EgertonLG7/B6.jpg",
+          "EgertonLG7/B7.jpg",
+          "EgertonLG7/B8.jpg",
+        ],
+      };
 
-      function openModalEgertonGF1(index) {
-        const modalCarouselEgertonGF1 = document.querySelector(
-          "#modalCarouselEgertonGF1"
-        );
-        const modalCarouselInnerEgertonGF1 =
-          modalCarouselEgertonGF1.querySelector(".carousel-inner");
+      function openModal(modalId, index) {
+        const modalCarouselId = `#modalCarousel${modalId}`;
+        const imageModalId = `#imageModal${modalId}`;
+
+        const modalCarousel = document.querySelector(modalCarouselId);
+        const modalCarouselInner =
+          modalCarousel.querySelector(".carousel-inner");
+
+        // Bilder aus dem entsprechenden Array holen
+        const imageArray = imageSources[modalId];
 
         // Leeren des Modal-Karussells
-        modalCarouselInnerEgertonGF1.innerHTML = "";
+        modalCarouselInner.innerHTML = "";
 
         // Erneutes Erzeugen des Modal-Karussells mit dem richtigen Bild aktiv
-        imageSourcesegertonGF.forEach((src, i) => {
-          const itemEgertonGF1 = document.createElement("div");
-          itemEgertonGF1.className = `carousel-item${
-            i === index ? " active" : ""
-          }`;
-          itemEgertonGF1.innerHTML = `
-          <img src="${src}" class="d-block w-100" alt="Vergrößertes Bild">
-        `;
-          modalCarouselInnerEgertonGF1.appendChild(itemEgertonGF1);
+        imageArray.forEach((src, i) => {
+          const item = document.createElement("div");
+          item.className = `carousel-item${i === index ? " active" : ""}`;
+          item.innerHTML = `<img src="${src}" class="d-block w-100" alt="Vergrößertes Bild">`;
+          modalCarouselInner.appendChild(item);
         });
 
         // Öffnen des Modals
-        const modalEgertonGF1 = new bootstrap.Modal(
-          document.getElementById("imageModalEgertonGF1")
-        );
-        modalEgertonGF1.show();
+        const modal = new bootstrap.Modal(document.querySelector(imageModalId));
+        modal.show();
 
-        // Initialisiere oder hole die Karussell-Instanz für das Modal-Karussell 2
-        let modalCarouselInstanceEgertonGF1 = bootstrap.Carousel.getInstance(
-          modalCarouselEgertonGF1
-        );
-
-        if (modalCarouselInstanceEgertonGF1) {
-          modalCarouselInstanceEgertonGF1.to(index); // Wechselt zu dem Bild im Modal-Karussell
+        // Initialisiere oder hole die Karussell-Instanz für das Modal-Karussell
+        let modalCarouselInstance =
+          bootstrap.Carousel.getInstance(modalCarousel);
+        if (modalCarouselInstance) {
+          modalCarouselInstance.to(index); // Wechselt zu dem Bild im Modal-Karussell
         } else {
-          modalCarouselInstanceEgertonGF1 = new bootstrap.Carousel(
-            modalCarouselEgertonGF1,
-            {
-              interval: false, // Verhindert automatisches Wechseln der Pictures
-            }
-          );
-          modalCarouselInstanceEgertonGF1.to(index); // Wechselt zu dem Bild im Modal-Karussell
+          modalCarouselInstance = new bootstrap.Carousel(modalCarousel, {
+            interval: false, // Verhindert automatisches Wechseln der Pictures
+          });
+          modalCarouselInstance.to(index); // Wechselt zu dem Bild im Modal-Karussell
         }
       }
     </script>
@@ -205,7 +277,7 @@
           </div>
           <div class="items">
             <div class="button-wrapper">
-              <button class="icon-button" onclick="openModalEgertonGF1(0)">
+              <button class="icon-button" onclick="openModal('EgertonGF1', 0)">
                 <img src="Icons/Pictures.png" alt="Pictures" />
               </button>
 
@@ -312,14 +384,56 @@
           </div>
           <div class="items">
             <div class="button-wrapper">
-              <button onclick="googleMaps()" class="icon-button">
+              <button class="icon-button" onclick="openModal('CadoganGF2',0)">
                 <img src="Icons/Pictures.png" alt="Pictures" />
               </button>
+
+              <div
+                class="modal fade"
+                id="imageModalCadoganGF2"
+                aria-labelledby="imageModalLabel"
+                aria-hidden="true"
+                tabindex="-1"
+              >
+                <div class="modal-dialog modal-dialog-centered">
+                  <div class="modal-content">
+                    <div class="modal-body">
+                      <div id="modalCarouselCadoganGF2" class="carousel slide">
+                        <div class="carousel-inner"></div>
+                        <a
+                          class="carousel-control-prev"
+                          href="#modalCarouselCadoganGF2"
+                          role="button"
+                          data-bs-slide="prev"
+                        >
+                          <span
+                            class="carousel-control-prev-icon"
+                            aria-hidden="true"
+                          ></span>
+                          <span class="visually-hidden">Previous</span>
+                        </a>
+                        <a
+                          class="carousel-control-next"
+                          href="#modalCarouselCadoganGF2"
+                          role="button"
+                          data-bs-slide="next"
+                        >
+                          <span
+                            class="carousel-control-next-icon"
+                            aria-hidden="true"
+                          ></span>
+                          <span class="visually-hidden">Next</span>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
               <div class="tooltip">Pictures</div>
             </div>
             <p class="beschriftung-icons">12</p>
             <div class="button-wrapper">
-              <button onclick="googleMaps()" class="icon-button">
+              <button class="icon-button" onclick="openModal('CadoganGF2',1)">
                 <img src="Icons/FloorPlan.png" alt="FloorPlan" />
               </button>
               <div class="tooltip">Floor Plan</div>
@@ -376,14 +490,56 @@
           </div>
           <div class="items">
             <div class="button-wrapper">
-              <button onclick="googleMaps()" class="icon-button">
+              <button class="icon-button" onclick="openModal('EgertonFF3',0)">
                 <img src="Icons/Pictures.png" alt="Pictures" />
               </button>
+
+              <div
+                class="modal fade"
+                id="imageModalEgertonFF3"
+                aria-labelledby="imageModalLabel"
+                aria-hidden="true"
+                tabindex="-1"
+              >
+                <div class="modal-dialog modal-dialog-centered">
+                  <div class="modal-content">
+                    <div class="modal-body">
+                      <div id="modalCarouselEgertonFF3" class="carousel slide">
+                        <div class="carousel-inner"></div>
+                        <a
+                          class="carousel-control-prev"
+                          href="#modalCarouselEgertonFF3"
+                          role="button"
+                          data-bs-slide="prev"
+                        >
+                          <span
+                            class="carousel-control-prev-icon"
+                            aria-hidden="true"
+                          ></span>
+                          <span class="visually-hidden">Previous</span>
+                        </a>
+                        <a
+                          class="carousel-control-next"
+                          href="#modalCarouselEgertonFF3"
+                          role="button"
+                          data-bs-slide="next"
+                        >
+                          <span
+                            class="carousel-control-next-icon"
+                            aria-hidden="true"
+                          ></span>
+                          <span class="visually-hidden">Next</span>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
               <div class="tooltip">Pictures</div>
             </div>
             <p class="beschriftung-icons">17</p>
             <div class="button-wrapper">
-              <button onclick="googleMaps()" class="icon-button">
+              <button class="icon-button" onclick="openModal('EgertonFF3',15)">
                 <img src="Icons/FloorPlan.png" alt="FloorPlan" />
               </button>
               <div class="tooltip">Floor Plan</div>
@@ -440,14 +596,62 @@
           </div>
           <div class="items">
             <div class="button-wrapper">
-              <button onclick="googleMaps()" class="icon-button">
+              <button
+                class="icon-button"
+                onclick="openModal('QueensgatePH4',0)"
+              >
                 <img src="Icons/Pictures.png" alt="Pictures" />
               </button>
+
+              <div
+                class="modal fade"
+                id="imageModalQueensgatePH4"
+                aria-labelledby="imageModalLabel"
+                aria-hidden="true"
+                tabindex="-1"
+              >
+                <div class="modal-dialog modal-dialog-centered">
+                  <div class="modal-content">
+                    <div class="modal-body">
+                      <div
+                        id="modalCarouselQueensgatePH4"
+                        class="carousel slide"
+                      >
+                        <div class="carousel-inner"></div>
+                        <a
+                          class="carousel-control-prev"
+                          href="#modalCarouselQueensgatePH4"
+                          role="button"
+                          data-bs-slide="prev"
+                        >
+                          <span
+                            class="carousel-control-prev-icon"
+                            aria-hidden="true"
+                          ></span>
+                          <span class="visually-hidden">Previous</span>
+                        </a>
+                        <a
+                          class="carousel-control-next"
+                          href="#modalCarouselQueensgatePH4"
+                          role="button"
+                          data-bs-slide="next"
+                        >
+                          <span
+                            class="carousel-control-next-icon"
+                            aria-hidden="true"
+                          ></span>
+                          <span class="visually-hidden">Next</span>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
               <div class="tooltip">Pictures</div>
             </div>
             <p class="beschriftung-icons">11</p>
             <div class="button-wrapper">
-              <button onclick="googleMaps()" class="icon-button">
+              <button class="icon-button">
                 <img src="Icons/FloorPlan.png" alt="FloorPlan" />
               </button>
               <div class="tooltip">Floor Plan</div>
@@ -504,19 +708,61 @@
           </div>
           <div class="items">
             <div class="button-wrapper">
-              <button onclick="googleMaps()" class="icon-button">
+              <button class="icon-button" onclick="openModal('EgertonPH5',0)">
                 <img src="Icons/Pictures.png" alt="Pictures" />
               </button>
+
+              <div
+                class="modal fade"
+                id="imageModalEgertonPH5"
+                aria-labelledby="imageModalLabel"
+                aria-hidden="true"
+                tabindex="-1"
+              >
+                <div class="modal-dialog modal-dialog-centered">
+                  <div class="modal-content">
+                    <div class="modal-body">
+                      <div id="modalCarouselEgertonPH5" class="carousel slide">
+                        <div class="carousel-inner"></div>
+                        <a
+                          class="carousel-control-prev"
+                          href="#modalCarouselEgertonPH5"
+                          role="button"
+                          data-bs-slide="prev"
+                        >
+                          <span
+                            class="carousel-control-prev-icon"
+                            aria-hidden="true"
+                          ></span>
+                          <span class="visually-hidden">Previous</span>
+                        </a>
+                        <a
+                          class="carousel-control-next"
+                          href="#modalCarouselEgertonPH5"
+                          role="button"
+                          data-bs-slide="next"
+                        >
+                          <span
+                            class="carousel-control-next-icon"
+                            aria-hidden="true"
+                          ></span>
+                          <span class="visually-hidden">Next</span>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
               <div class="tooltip">Pictures</div>
             </div>
             <p class="beschriftung-icons">16</p>
             <div class="button-wrapper">
-              <button onclick="googleMaps()" class="icon-button">
+              <button class="icon-button">
                 <img src="Icons/FloorPlan.png" alt="FloorPlan" />
               </button>
               <div class="tooltip">Floor Plan</div>
             </div>
-            <p class="beschriftung-icons"></p>
+            <p class="beschriftung-icons">0</p>
             <div class="button-wrapper">
               <button onclick="googleMapsEgerton()" class="icon-button">
                 <img src="Icons/MapsIcon.png" alt="Maps" />
@@ -568,14 +814,56 @@
           </div>
           <div class="items">
             <div class="button-wrapper">
-              <button onclick="googleMaps()" class="icon-button">
+              <button class="icon-button" onclick="openModal('MilnerH6',0)">
                 <img src="Icons/Pictures.png" alt="Pictures" />
               </button>
+
+              <div
+                class="modal fade"
+                id="imageModalMilnerH6"
+                aria-labelledby="imageModalLabel"
+                aria-hidden="true"
+                tabindex="-1"
+              >
+                <div class="modal-dialog modal-dialog-centered">
+                  <div class="modal-content">
+                    <div class="modal-body">
+                      <div id="modalCarouselMilnerH6" class="carousel slide">
+                        <div class="carousel-inner"></div>
+                        <a
+                          class="carousel-control-prev"
+                          href="#modalCarouselMilnerH6"
+                          role="button"
+                          data-bs-slide="prev"
+                        >
+                          <span
+                            class="carousel-control-prev-icon"
+                            aria-hidden="true"
+                          ></span>
+                          <span class="visually-hidden">Previous</span>
+                        </a>
+                        <a
+                          class="carousel-control-next"
+                          href="#modalCarouselMilnerH6"
+                          role="button"
+                          data-bs-slide="next"
+                        >
+                          <span
+                            class="carousel-control-next-icon"
+                            aria-hidden="true"
+                          ></span>
+                          <span class="visually-hidden">Next</span>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
               <div class="tooltip">Pictures</div>
             </div>
             <p class="beschriftung-icons">17</p>
             <div class="button-wrapper">
-              <button onclick="googleMaps()" class="icon-button">
+              <button class="icon-button" onclick="openModal('MilnerH6',15)">
                 <img src="Icons/FloorPlan.png" alt="FloorPlan" />
               </button>
               <div class="tooltip">Floor Plan</div>
@@ -632,9 +920,51 @@
           </div>
           <div class="items">
             <div class="button-wrapper">
-              <button onclick="googleMaps()" class="icon-button">
+              <button class="icon-button" onclick="openModal('EgertonLG7',0)">
                 <img src="Icons/Pictures.png" alt="Pictures" />
               </button>
+
+              <div
+                class="modal fade"
+                id="imageModalEgertonLG7"
+                aria-labelledby="imageModalLabel"
+                aria-hidden="true"
+                tabindex="-1"
+              >
+                <div class="modal-dialog modal-dialog-centered">
+                  <div class="modal-content">
+                    <div class="modal-body">
+                      <div id="modalCarouselEgertonLG7" class="carousel slide">
+                        <div class="carousel-inner"></div>
+                        <a
+                          class="carousel-control-prev"
+                          href="#modalCarouselEgertonLG7"
+                          role="button"
+                          data-bs-slide="prev"
+                        >
+                          <span
+                            class="carousel-control-prev-icon"
+                            aria-hidden="true"
+                          ></span>
+                          <span class="visually-hidden">Previous</span>
+                        </a>
+                        <a
+                          class="carousel-control-next"
+                          href="#modalCarouselEgertonLG7"
+                          role="button"
+                          data-bs-slide="next"
+                        >
+                          <span
+                            class="carousel-control-next-icon"
+                            aria-hidden="true"
+                          ></span>
+                          <span class="visually-hidden">Next</span>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
               <div class="tooltip">Pictures</div>
             </div>
             <p class="beschriftung-icons">8</p>
