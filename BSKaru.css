@@ -39,9 +39,10 @@
 
 /* Stil für die Bilder */
 .carousel-item > img {
-  height: 500px; /* Breite auf 100% des Container-Breite setzen */
   object-fit: contain; /* Bild skalieren, um den Container auszufüllen */
   display: block; /* Verhindert zusätzlichen Abstand unter dem Bild */
+  width: 100%;
+  height: auto;
 }
 
 /* Modal-Stile */
@@ -123,8 +124,10 @@
 
 /* Stile für Bilder */
 .modal-content.bild {
-  min-width: 743px;
+  min-width: 703px;
   max-width: 90vw;
+  max-height: fit-content;
+  object-fit: contain;
 }
 
 /* Stile für Videos */
@@ -132,13 +135,13 @@
   max-width: fit-content; /* Passt sich der Breite des Inhalts an */
 }
 @media (max-width: 1000px) {
-  .modal-content {
+  .modal-content.bild {
     min-width: 1px;
     max-width: 800px;
   }
 }
 @media (max-width: 400px) {
-  .modal-content {
+  .modal-content.bild {
     min-width: 1px;
     max-width: 400px;
   }
