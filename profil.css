@@ -5,6 +5,7 @@
 .profil-ausrichtung p {
   font-size: 15px;
   margin: 0px;
+  font-family: "MeineSchriftart2";
 }
 .mobil {
   color: #7a7474;
@@ -24,7 +25,9 @@
   display: flex;
   align-items: center; /* Vertikale Ausrichtung innerhalb des Profils */
 }
-
+.carousel.slide {
+  margin-bottom: 0;
+}
 .profile-header {
   display: flex;
   justify-content: space-between; /* Abstand zwischen Profil und Header */
@@ -46,10 +49,9 @@
   margin-right: 17px;
   margin-left: 10px;
   flex-direction: column;
-  font-family: "Baskerville", "Baskerville Old Face", "Hoefler Text", Garamond,
-    "Times New Roman", serif;
+  font-family: "MeineSchriftart";
 }
-@media (max-width: 992px) {
+@media (max-width: 1100px) {
   .profile-info {
     display: none;
   }
@@ -57,6 +59,7 @@
 
 .profile-info h2 {
   font-size: 14px;
+  font-family: "MeineSchriftart2";
 }
 .Name {
   margin-bottom: 3px;

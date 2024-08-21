@@ -39,9 +39,8 @@
 
 /* Stil für die Bilder */
 .carousel-item > img {
-  width: 100%; /* Breite auf 100% des Container-Breite setzen */
-  height: 100%; /* Höhe auf 100% des Container-Höhe setzen */
-  object-fit: cover; /* Bild skalieren, um den Container auszufüllen */
+  height: 500px; /* Breite auf 100% des Container-Breite setzen */
+  object-fit: contain; /* Bild skalieren, um den Container auszufüllen */
   display: block; /* Verhindert zusätzlichen Abstand unter dem Bild */
 }
 
@@ -54,28 +53,6 @@
   height: 100%; /* Volle Höhe für Modal-Dialog */
   margin: 0; /* Kein zusätzlicher Margin */
   padding: 0; /* Kein zusätzliches Padding */
-}
-
-.modal-content {
-  min-width: 703px; /* Mindestbreite auf 703px setzen */
-  max-width: 90vw; /* Maximalbreite auf 90% der Ansicht setzen */
-  height: auto; /* Höhe automatisch anpassen */
-  max-height: 90vh; /* Maximalhöhe auf 90% der Ansicht setzen */
-  display: flex; /* Flexbox für die korrekte Positionierung des Karussells */
-  align-items: center; /* Vertikale Zentrierung des Karussells */
-  justify-content: center; /* Horizontale Zentrierung des Karussells */
-}
-@media (max-width: 1000px) {
-  .modal-content {
-    min-width: 1px;
-    max-width: 800px;
-  }
-}
-@media (max-width: 400px) {
-  .modal-content {
-    min-width: 1px;
-    max-width: 400px;
-  }
 }
 
 /* Modal-Karussell */
@@ -106,4 +83,63 @@
 }
 .carousel-indicators button::before {
   content: "";
+}
+/* Modal Video Content Anpassung */
+
+/* Wrapper für das Video */
+.video-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Video-Player: Höhe festgelegt, Breite berechnet sich automatisch */
+.video-player {
+  height: 100%; /* Feste Höhe relativ zum Modal */
+  width: auto; /* Breite passt sich automatisch an */
+  max-height: 700px; /* Maximale Höhe des Videos */
+  border: 2px solid white; /* Weißer Rahmen um das Video */
+  border-radius: 5px; /* Abgerundete Ecken am Video */
+  position: fixed;
+}
+@media (max-width: 1000px) {
+  .video-player {
+    height: 65%;
+    width: auto;
+  }
+}
+.modal-content {
+  background-color: white; /* Weißer Hintergrund */
+  padding: 10px; /* Abstand zwischen Inhalt und Rand */
+  border-radius: 10px; /* Abgerundete Ecken */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Schatten für Tiefe */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-height: 90vh; /* Maximale Höhe auf 90% der Bildschirmhöhe begrenzen */
+  overflow: hidden; /* Verhindert das Scrollen */
+  object-fit: contain;
+}
+
+/* Stile für Bilder */
+.modal-content.bild {
+  min-width: 743px;
+  max-width: 90vw;
+}
+
+/* Stile für Videos */
+.modal-content.video {
+  max-width: fit-content; /* Passt sich der Breite des Inhalts an */
+}
+@media (max-width: 1000px) {
+  .modal-content {
+    min-width: 1px;
+    max-width: 800px;
+  }
+}
+@media (max-width: 400px) {
+  .modal-content {
+    min-width: 1px;
+    max-width: 400px;
+  }
 }

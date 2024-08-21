@@ -1,7 +1,23 @@
-/* Allgemeine Einstellungen */
+@font-face {
+  font-family: "MeineSchriftart";
+  src: url("Fonts/Baskerville.ttc") format("truetype");
+}
+@font-face {
+  font-family: "MeineSchriftart2";
+  src: url("Fonts/Gotham-Book.otf") format("opentype");
+}
+@font-face {
+  font-family: "MeineSchriftart3";
+  src: url("Fonts/HelveticaLTStd-LightCond.otf") format("opentype");
+}
+@font-face {
+  font-family: "MeineSchriftart4";
+  src: url("Fonts/PlayfairDisplay-Italic-VariableFont_wght.ttf")
+    format("truetype");
+}
+
 body {
-  font-family: "Baskerville", "Baskerville Old Face", "Hoefler Text", Garamond,
-    "Times New Roman", serif;
+  font-family: "MeineSchriftart2";
   font-size: 1.5rem;
   font-weight: 700;
   line-height: 1.75;
@@ -15,8 +31,7 @@ h3,
 p,
 blockquote,
 pre {
-  font-family: "Baskerville", "Baskerville Old Face", "Hoefler Text", Garamond,
-    "Times New Roman", serif;
+  font-family: "MeineSchriftart2";
 }
 
 h3 {
@@ -43,11 +58,12 @@ pre {
 .header {
   display: flex;
   align-items: center;
-  padding: 1rem;
+  padding-left: 1rem;
+  padding-top: 1rem;
+
   background-color: transparent;
   text-align: right;
-  font-family: "Baskerville", "Baskerville Old Face", "Hoefler Text", Garamond,
-    "Times New Roman", serif;
+  font-family: "MeineSchriftart3";
 }
 @media (max-width: 1401px) {
   .header {
@@ -103,8 +119,9 @@ pre {
 
 .straße {
   flex-grow: 1;
-  font-family: "Baskerville", "Baskerville Old Face", "Hoefler Text", Garamond,
-    "Times New Roman", serif;
+}
+.straße h3 {
+  font-family: "MeineSchriftart2";
 }
 
 .preis {
@@ -114,19 +131,19 @@ pre {
 }
 .details {
   display: flex;
-  font-family: "Baskerville", "Baskerville Old Face", "Hoefler Text", Garamond,
-    "Times New Roman", serif;
 }
 
 /* Flexbox und Items */
 .icon-text {
   display: flex;
-  gap: 0.5rem;
-  border-right: 1px solid #ddd;
+  gap: 0.4rem;
   padding-right: 18px;
   align-items: center;
   margin-bottom: 20px;
   height: 35px;
+}
+.icon-text p {
+  font-family: "MeineSchriftart2";
 }
 
 .flex-container {
@@ -161,8 +178,7 @@ pre {
   font-size: 10px;
   margin-left: -40px;
   margin-top: 13px;
-  font-family: "Baskerville", "Baskerville Old Face", "Hoefler Text", Garamond,
-    "Times New Roman", serif;
+  font-family: "MeineSchriftart2";
 }
 
 .items img {
@@ -260,7 +276,7 @@ pre {
   padding: 0.4rem 0.6rem;
   font-size: 0.8rem;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-  z-index: 10;
+  z-index: 40 !important;
   position: absolute;
 }
 
@@ -291,4 +307,11 @@ pre {
   .straße {
     margin-top: 10px;
   }
+}
+.dick {
+  font-weight: bold;
+  font-family: "MeineSchriftart2";
+}
+.hell {
+  font-family: "MeineSchriftart2";
 }
