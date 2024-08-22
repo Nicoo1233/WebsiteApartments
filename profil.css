@@ -7,6 +7,16 @@
   margin: 0px;
   font-family: "MeineSchriftart2";
 }
+.profil-ausrichtung a {
+  font-size: 15px;
+  margin: 0px;
+  font-family: "MeineSchriftart2";
+  text-decoration: none;
+}
+.kleiner {
+  display: flex;
+}
+
 .mobil {
   color: #7a7474;
   font-weight: bold;
@@ -22,8 +32,11 @@
   color: #000000;
 }
 .profile {
-  display: flex;
-  align-items: center; /* Vertikale Ausrichtung innerhalb des Profils */
+  display: flex; /* Flexbox aktivieren */
+  align-items: center; /* Vertikale Ausrichtung der Elemente */
+  justify-content: space-between; /* Platzierung der Elemente: Bild links, Rest rechts */
+  width: 100%; /* Profile kann eine bestimmte Breite oder die volle Breite haben */
+  padding: 20px; /* Optional: Abstand innerhalb des Containers */
 }
 .carousel.slide {
   margin-bottom: 0;
@@ -51,21 +64,170 @@
   flex-direction: column;
   font-family: "MeineSchriftart";
 }
-@media (max-width: 1100px) {
-  .profile-info {
-    display: none;
-  }
-}
 
 .profile-info h2 {
   font-size: 14px;
   font-family: "MeineSchriftart2";
-}
-.Name {
   margin-bottom: 3px;
 }
+
 .unternehmensname {
   font-size: 12px;
   color: #7a7474;
   margin: 5px 0;
+}
+@media (max-width: 1200px) {
+  .profile {
+    padding: 10px;
+    justify-content: center;
+  }
+  .profile img {
+    margin: 0px;
+  }
+  .profile img {
+    width: 174px;
+    height: 79px;
+  }
+  .profile-info {
+    margin-right: 5px;
+    margin-left: 5px;
+  }
+  .profile-info h2 {
+    font-size: 10px;
+  }
+  .profil-ausrichtung p {
+    font-size: 11px;
+  }
+  .profil-ausrichtung a {
+    font-size: 11px;
+  }
+}
+@media (max-width: 812px) {
+  .profile img {
+    width: 142px;
+    height: 64px;
+  }
+  .profile-header {
+    margin-bottom: 5px;
+  }
+  .profile {
+    padding-right: 0;
+    padding-left: 5px;
+    padding-bottom: 5px;
+    justify-content: space-between;
+  }
+  .profil-ausrichtung p {
+    font-size: 8px;
+  }
+  .profil-ausrichtung a {
+    font-size: 8px;
+  }
+  .mobil {
+    display: none;
+  }
+  .email {
+    display: none;
+  }
+  .profile-info {
+    text-align: left;
+    border-right: none !important;
+    border-bottom: 1px solid #ddd;
+
+    flex-direction: column !important;
+    padding: 4px !important;
+    font-family: "MeineSchriftart";
+    margin-bottom: 5px;
+  }
+  .kleiner {
+    visibility: hidden;
+    display: block;
+    padding: 10px;
+    border: 1px solid #ddd;
+  }
+  .profil-ausrichtung {
+    align-items: center;
+  }
+  .profile-info h2 {
+    font-size: 8px !important;
+    font-weight: bold;
+    margin-bottom: 0 !important;
+    margin-top: 3px !important;
+    margin-bottom: 3px !important;
+  }
+}
+.contact {
+  display: flex;
+}
+
+.contact-button-wrapper {
+  background-color: transparent;
+  display: none;
+  z-index: 1000;
+}
+.contact-button-wrapper img {
+  width: 25px;
+  height: 25px;
+}
+.contact-tooltip {
+  align-items: center;
+  text-align: center;
+  display: none;
+  position: fixed;
+  top: 18%;
+  left: 75%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  padding: 5px;
+  width: 200px;
+  z-index: 1001;
+}
+.contact-tooltip h2 {
+  margin-top: 0;
+}
+.contact-tooltip::before {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 10px;
+  border-style: solid;
+  border-color: white transparent transparent transparent;
+}
+@media (max-width: 812px) {
+  #contactSection {
+    display: none;
+  }
+
+  .contact-button-wrapper {
+    display: block;
+  }
+}
+@media (min-width: 812px) {
+  .contact-tooltip {
+    display: none !important;
+  }
+}
+.kontakt-button {
+  height: 30px;
+  width: 30px;
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  justify-content: center;
+  border-top-left-radius: 50%;
+  border-top-right-radius: 50%;
+  border-bottom-right-radius: 50%;
+  border-bottom-left-radius: 50%;
+  text-decoration-line: none;
+  background-color: rgb(0, 0, 0);
+}
+.kontaktboxicon {
+  height: 13px;
+  width: 13px;
+  padding: 0;
+  margin-right: 5px;
 }

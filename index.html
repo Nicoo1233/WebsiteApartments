@@ -22,18 +22,99 @@
         <div class="profile-header">
           <div class="profile">
             <img src="Logo.png" alt="Profile Image" />
+          </div>
+
+          <!-- Contact Information Container -->
+          <div class="kleiner">
+            <div class="contact" id="contactSection">
+              <div
+                class="profile-info"
+                style="border-right: 1px solid #ddd; padding-right: 20px"
+              >
+                <h2 class="Name">Mahmud Sami Akçay</h2>
+                <div class="profil-ausrichtung">
+                  <p class="mobil">M:</p>
+                  <p class="mobilnummer">+44 7596 420896</p>
+                </div>
+                <div class="profil-ausrichtung">
+                  <p class="email">E:</p>
+                  <a
+                    href="mailto:sami.akcay@sbholdings.co.uk"
+                    class="emailadresse"
+                    >sami.akcay@sbholdings.co.uk</a
+                  >
+                </div>
+              </div>
+              <div
+                class="profile-info"
+                style="border-right: 1px solid #ddd; padding-right: 20px"
+              >
+                <h2 class="Name">Bora Çakır</h2>
+                <div class="profil-ausrichtung">
+                  <p class="mobil">M:</p>
+                  <p class="mobilnummer">+44 7407 708833</p>
+                </div>
+                <div class="profil-ausrichtung">
+                  <p class="email">E:</p>
+                  <a
+                    href="mailto:bora.cakir@sbholdings.co.uk"
+                    class="emailadresse"
+                    >bora.cakir@sbholdings.co.uk</a
+                  >
+                </div>
+              </div>
+              <div class="profile-info">
+                <h2 class="Name">Yuriaiti Waili</h2>
+                <div class="profil-ausrichtung">
+                  <p class="mobil">M:</p>
+                  <p class="mobilnummer">+44 7756 809808</p>
+                </div>
+                <div class="profil-ausrichtung">
+                  <p class="email">E:</p>
+                  <a
+                    href="mailto:yuriaiti.waili@sbholdings.co.uk"
+                    class="emailadresse"
+                    >yuriaiti.waili@sbholdings.co.uk</a
+                  >
+                </div>
+              </div>
+            </div>
+            <!-- Contact Button and Tooltip -->
+          </div>
+          <div class="contact-button-wrapper" id="contactIcon">
+            <button class="kontakt-button" onClick="toggleContactPopup()">
+              <img src="Icons/Kontakt.png" alt="Contact Icon" />
+            </button>
+          </div>
+          <!-- Contact Popup -->
+          <div class="contact-tooltip" id="contactTooltip">
             <div
               class="profile-info"
               style="border-right: 1px solid #ddd; padding-right: 20px"
             >
               <h2 class="Name">Mahmud Sami Akçay</h2>
               <div class="profil-ausrichtung">
+                <img
+                  class="kontaktboxicon"
+                  src="Icons/Tele.svg"
+                  alt="Contact
+                Icon"
+                />
                 <p class="mobil">M:</p>
                 <p class="mobilnummer">+44 7596 420896</p>
               </div>
               <div class="profil-ausrichtung">
+                <img
+                  class="kontaktboxicon"
+                  src="Icons/MailS.png"
+                  alt="Contact Icon"
+                />
                 <p class="email">E:</p>
-                <p class="emailadresse">sami.akcay@sbholdings.co.uk</p>
+                <a
+                  href="mailto:sami.akcay@sbholdings.co.uk"
+                  class="emailadresse"
+                  >sami.akcay@sbholdings.co.uk</a
+                >
               </div>
             </div>
             <div
@@ -42,23 +123,53 @@
             >
               <h2 class="Name">Bora Çakır</h2>
               <div class="profil-ausrichtung">
+                <img
+                  class="kontaktboxicon"
+                  src="Icons/Tele.svg"
+                  alt="Contact
+                Icon"
+                />
                 <p class="mobil">M:</p>
                 <p class="mobilnummer">+44 7407 708833</p>
               </div>
               <div class="profil-ausrichtung">
+                <img
+                  class="kontaktboxicon"
+                  src="Icons/MailS.png"
+                  alt="Contact Icon"
+                />
                 <p class="email">E:</p>
-                <p class="emailadresse">bora.cakir@sbholdings.co.uk</p>
+                <a
+                  href="mailto:bora.cakir@sbholdings.co.uk"
+                  class="emailadresse"
+                  >bora.cakir@sbholdings.co.uk</a
+                >
               </div>
             </div>
             <div class="profile-info">
               <h2 class="Name">Yuriaiti Waili</h2>
               <div class="profil-ausrichtung">
+                <img
+                  class="kontaktboxicon"
+                  src="Icons/Tele.svg"
+                  alt="Contact
+                Icon"
+                />
                 <p class="mobil">M:</p>
                 <p class="mobilnummer">+44 7756 809808</p>
               </div>
               <div class="profil-ausrichtung">
+                <img
+                  class="kontaktboxicon"
+                  src="Icons/MailS.png"
+                  alt="Contact Icon"
+                />
                 <p class="email">E:</p>
-                <p class="emailadresse">yuriaiti.waili@sbholdings.co.uk</p>
+                <a
+                  href="mailto:yuriaiti.waili@sbholdings.co.uk"
+                  class="emailadresse"
+                  >yuriaiti.waili@sbholdings.co.uk</a
+                >
               </div>
             </div>
           </div>
@@ -1229,5 +1340,28 @@
         videoPlayer.currentTime = 0;
         videoPlayer.src = ""; // Clear the source to prevent issues on iOS
       });
+
+    // JavaScript function to toggle the contact popup
+    function toggleContactPopup() {
+      const contactTooltip = document.getElementById("contactTooltip");
+      if (contactTooltip.style.display === "block") {
+        contactTooltip.style.display = "none";
+      } else {
+        contactTooltip.style.display = "block";
+      }
+    }
+
+    // Optional: Close the popup when clicking outside
+    window.addEventListener("click", function (event) {
+      const contactIcon = document.getElementById("contactIcon");
+      const contactTooltip = document.getElementById("contactTooltip");
+
+      if (
+        !contactIcon.contains(event.target) &&
+        !contactTooltip.contains(event.target)
+      ) {
+        contactTooltip.style.display = "none";
+      }
+    });
   </script>
 </html>
