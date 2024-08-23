@@ -16,16 +16,19 @@
     <link rel="stylesheet" href="navbar.css" />
     <link rel="stylesheet" href="BSKaru.css" />
   </head>
-  <body style="background-color: rgb(248, 249, 250)">
+  <body style="background-color: rgb(248, 249, 250)" id="body">
     <div class="container">
-      <nav class="navbar sticky-top bg-body-tertiary">
-        <div class="profile-header">
-          <div class="profile">
-            <img src="Logo.png" alt="Profile Image" />
+      <nav class="navbar top sticky-top bg-body-tertiary">
+        <div class="kleinprofile" id="kleinprofile">
+          <img src="Logo.png" alt="Profile Image" id="kleinprofileimg" />
+        </div>
+        <div class="profile-header" id="normalprofileheader">
+          <div class="profile" id="normalprofile">
+            <img src="Logo.png" alt="Profile Image" id="normalprofileimg" />
           </div>
 
           <!-- Contact Information Container -->
-          <div class="kleiner">
+          <div class="kleiner" id="kleiner">
             <div class="contact" id="contactSection">
               <div
                 class="profile-info"
@@ -1363,5 +1366,76 @@
         contactTooltip.style.display = "none";
       }
     });
+
+    //KleinHeader verkleinern
+
+    window.onscroll = function () {
+      console.log(
+        document.getElementById("body").getBoundingClientRect().width
+      );
+
+      shrinkHeader();
+    };
+
+    function shrinkHeader() {
+      const kleinheader = document.getElementById("kleinprofile");
+      const kleinprofilbild = document.getElementById("kleinprofileimg");
+      const scrollPosition = window.scrollY;
+      const normalprofileheader = document.getElementById(
+        "normalprofileheader"
+      );
+      if (document.getElementById("body").getBoundingClientRect().width < 812) {
+        // Verkleinere den Header und das Bild basierend auf der Scroll-Position
+        if (scrollPosition > 70) {
+          kleinheader.style.height = "50px"; // Verkleinern des Headers
+          kleinprofilbild.style.height = "38px"; // Verkleinern des Profilbildes
+          kleinprofilbild.style.width = "85px"; // Verkleinern des Profilbildes
+          normalprofileheader.style.display = "none";
+        } else {
+          kleinheader.style.height = "70px"; // Ursprüngliche Größe des Headers
+          kleinprofilbild.style.height = "64px"; // Ursprüngliche Größe des Profilbildes
+          kleinprofilbild.style.width = "142px"; // Ursprüngliche Größe des Profilbildes
+          normalprofileheader.style.display = "flex";
+        }
+      }
+
+      // Ausblenden, wenn weiter nach unten gescrollt wird
+      if (scrollPosition > 200) {
+        kleinheader.style.display = "none"; // Komplett ausblenden des Headers
+      } else {
+        kleinheader.style.display = "block";
+      }
+
+      //Normalheader verkleinern
+      const normalheader = document.getElementById("normalprofile");
+      const normalprofilbild = document.getElementById("normalprofileimg");
+      const kleiner = document.getElementById("kleiner");
+      const fadeStart = 0; // Scrollposition, ab der die Verblassung beginnt
+      const fadeEnd = 200; // Scrollposition, bei der das Element vollständig unsichtbar sein soll
+      if (scrollPosition >= fadeStart && scrollPosition <= fadeEnd) {
+        // Berechne die neue Opazität basierend auf der Scrollposition
+        const opacity =
+          1 - (scrollPosition - fadeStart) / (fadeEnd - fadeStart);
+        kleiner.style.opacity = opacity;
+      } else if (scrollPosition > fadeEnd) {
+        // Sobald das Ende erreicht ist, wird die Opazität auf 0 gesetzt
+        kleiner.style.opacity = 0;
+      } else {
+        // Wenn man wieder nach oben scrollt, wird die Opazität wiederhergestellt
+        kleiner.style.opacity = 1;
+      }
+
+      if (scrollPosition > 70) {
+        normalheader.style.height = "60px";
+        normalprofilbild.style.height = "64px"; // Verkleinern des Profilbildes
+        normalprofilbild.style.width = "142px"; // Verkleinern des Profilbildes
+      } else {
+        kleiner.style.display = "block";
+        normalheader.style.height = "100px";
+
+        normalprofilbild.style.height = "99px"; // Ursprüngliche Größe des Profilbildes
+        normalprofilbild.style.width = "218px"; // Ursprüngliche Größe des Profilbildes}
+      }
+    }
   </script>
 </html>
