@@ -19,11 +19,11 @@
   <body style="background-color: rgb(248, 249, 250)" id="body">
     <div class="container">
       <nav class="navbar top sticky-top bg-body-tertiary">
-        <div class="kleinprofile" id="kleinprofile">
+        <div class="kleinprofile" id="kleinprofile" onClick="scrollToTop()">
           <img src="Logo.png" alt="Profile Image" id="kleinprofileimg" />
         </div>
         <div class="profile-header" id="normalprofileheader">
-          <div class="profile" id="normalprofile">
+          <div class="profile" id="normalprofile" onClick="scrollToTop()">
             <img src="Logo.png" alt="Profile Image" id="normalprofileimg" />
           </div>
 
@@ -36,8 +36,8 @@
               >
                 <h2 class="Name">Mahmud Sami Akçay</h2>
                 <div class="profil-ausrichtung">
-                  <p class="mobil">M:</p>
-                  <p class="mobilnummer">+44 7596 420896</p>
+                  <p class="mobil"></p>
+                  <p class="mobilnummer"></p>
                 </div>
                 <div class="profil-ausrichtung">
                   <p class="email">E:</p>
@@ -54,8 +54,8 @@
               >
                 <h2 class="Name">Bora Çakır</h2>
                 <div class="profil-ausrichtung">
-                  <p class="mobil">M:</p>
-                  <p class="mobilnummer">+44 7407 708833</p>
+                  <p class="mobil"></p>
+                  <p class="mobilnummer"></p>
                 </div>
                 <div class="profil-ausrichtung">
                   <p class="email">E:</p>
@@ -69,8 +69,8 @@
               <div class="profile-info">
                 <h2 class="Name">Yuriaiti Waili</h2>
                 <div class="profil-ausrichtung">
-                  <p class="mobil">M:</p>
-                  <p class="mobilnummer">+44 7756 809808</p>
+                  <p class="mobil"></p>
+                  <p class="mobilnummer"></p>
                 </div>
                 <div class="profil-ausrichtung">
                   <p class="email">E:</p>
@@ -84,105 +84,84 @@
             </div>
             <!-- Contact Button and Tooltip -->
           </div>
-          <div class="contact-button-wrapper" id="contactIcon">
-            <button class="kontakt-button" onClick="toggleContactPopup()">
-              <img src="Icons/Kontakt.png" alt="Contact Icon" />
-            </button>
-          </div>
-          <!-- Contact Popup -->
-          <div class="contact-tooltip" id="contactTooltip">
-            <div
-              class="profile-info"
-              style="border-right: 1px solid #ddd; padding-right: 20px"
-            >
-              <h2 class="Name">Mahmud Sami Akçay</h2>
-              <div class="profil-ausrichtung">
-                <img
-                  class="kontaktboxicon"
-                  src="Icons/Tele.svg"
-                  alt="Contact
-                Icon"
-                />
-                <p class="mobil">M:</p>
-                <p class="mobilnummer">+44 7596 420896</p>
-              </div>
-              <div class="profil-ausrichtung">
-                <img
-                  class="kontaktboxicon"
-                  src="Icons/MailS.png"
-                  alt="Contact Icon"
-                />
-                <p class="email">E:</p>
-                <a
-                  href="mailto:sami.akcay@sbholdings.co.uk"
-                  class="emailadresse"
-                  >sami.akcay@sbholdings.co.uk</a
-                >
-              </div>
+          <div style="position: relative" id="contactIcon">
+            <div class="contact-button-wrapper">
+              <button class="kontakt-button" onClick="toggleContactPopup()">
+                <img src="Icons/Kontakt.png" alt="Contact Icon" />
+              </button>
             </div>
-            <div
-              class="profile-info"
-              style="border-right: 1px solid #ddd; padding-right: 20px"
-            >
-              <h2 class="Name">Bora Çakır</h2>
-              <div class="profil-ausrichtung">
-                <img
-                  class="kontaktboxicon"
-                  src="Icons/Tele.svg"
-                  alt="Contact
-                Icon"
-                />
-                <p class="mobil">M:</p>
-                <p class="mobilnummer">+44 7407 708833</p>
+            <!-- Contact Popup -->
+            <div class="contact-tooltip" id="contactTooltip">
+              <div
+                class="profile-info"
+                style="border-right: 1px solid #ddd; padding-right: 20px"
+              >
+                <h2 class="Name">Mahmud Sami Akçay</h2>
+                <div class="profil-ausrichtung">
+                  <img
+                    class="kontaktboxicon"
+                    src="Icons/MailS.png"
+                    alt="Contact Icon"
+                  />
+                  <p class="email">E:</p>
+                  <a
+                    href="mailto:sami.akcay@sbholdings.co.uk"
+                    class="emailadresse"
+                    >sami.akcay@sbholdings.co.uk</a
+                  >
+                </div>
               </div>
-              <div class="profil-ausrichtung">
-                <img
-                  class="kontaktboxicon"
-                  src="Icons/MailS.png"
-                  alt="Contact Icon"
-                />
-                <p class="email">E:</p>
-                <a
-                  href="mailto:bora.cakir@sbholdings.co.uk"
-                  class="emailadresse"
-                  >bora.cakir@sbholdings.co.uk</a
-                >
+              <div
+                class="profile-info"
+                style="border-right: 1px solid #ddd; padding-right: 20px"
+              >
+                <h2 class="Name">Bora Çakır</h2>
+                <div class="profil-ausrichtung">
+                  <img
+                    class="kontaktboxicon"
+                    src="Icons/MailS.png"
+                    alt="Contact Icon"
+                  />
+                  <p class="email">E:</p>
+                  <a
+                    href="mailto:bora.cakir@sbholdings.co.uk"
+                    class="emailadresse"
+                    >bora.cakir@sbholdings.co.uk</a
+                  >
+                </div>
               </div>
-            </div>
-            <div class="profile-info">
-              <h2 class="Name">Yuriaiti Waili</h2>
-              <div class="profil-ausrichtung">
-                <img
-                  class="kontaktboxicon"
-                  src="Icons/Tele.svg"
-                  alt="Contact
-                Icon"
-                />
-                <p class="mobil">M:</p>
-                <p class="mobilnummer">+44 7756 809808</p>
-              </div>
-              <div class="profil-ausrichtung">
-                <img
-                  class="kontaktboxicon"
-                  src="Icons/MailS.png"
-                  alt="Contact Icon"
-                />
-                <p class="email">E:</p>
-                <a
-                  href="mailto:yuriaiti.waili@sbholdings.co.uk"
-                  class="emailadresse"
-                  >yuriaiti.waili@sbholdings.co.uk</a
-                >
+              <div class="profile-info">
+                <h2 class="Name">Yuriaiti Waili</h2>
+                <div class="profil-ausrichtung">
+                  <img
+                    class="kontaktboxicon"
+                    src="Icons/MailS.png"
+                    alt="Contact Icon"
+                  />
+                  <p class="email">E:</p>
+                  <a
+                    href="mailto:yuriaiti.waili@sbholdings.co.uk"
+                    class="emailadresse"
+                    >yuriaiti.waili@sbholdings.co.uk</a
+                  >
+                </div>
               </div>
             </div>
           </div>
           <div class="header">
-            <h1 class="header-main">S&B&nbsp;</h1>
-            <h1 class="header-subtitle">HOLDINGS</h1>
+            <h1 id="headerrechts">S&B&nbsp;HOLDINGS</h1>
+          </div>
+          <div
+            class="contact-button-wrapper-dummy"
+            id="contact-button-wrapper-dummy"
+          >
+            <button class="kontakt-button-dummy" onClick="scrollToTop()">
+              <img src="Icons/Kontakt.png" alt="Contact Icon" />
+            </button>
           </div>
         </div>
       </nav>
-      <!-- Apartment 1 -->
+      <!-- Apartment 1 Egerton-->
       <div class="product">
         <div class="carousel-container">
           <div id="includedContent1"></div>
@@ -316,146 +295,7 @@
           </div>
         </div>
       </div>
-      <!-- Apartment 2 -->
-
-      <div class="product">
-        <div class="carousel-container">
-          <div id="includedContent2"></div>
-        </div>
-        <div class="product-description">
-          <div class="description-header">
-            <div class="straße">
-              <h3>38 Cadogan Square, London SW1X 0JL</h3>
-              <div class="flatground">
-                <div class="dick">Flat &nbsp;</div>
-                <div class="hell">(Ground Floor)</div>
-              </div>
-            </div>
-          </div>
-          <div class="flex-container">
-            <div
-              class="icon-text"
-              style="border-right: 1px solid #ddd; padding-right: 18px"
-            >
-              <img src="Icons/BettIcon.png" alt="Beds Icon" />
-              <p>3</p>
-            </div>
-            <div
-              class="icon-text"
-              style="border-right: 1px solid #ddd; padding-right: 18px"
-            >
-              <img src="Icons/QM.png" alt="Size Icon" />
-              <p>1621 Sq Ft</p>
-            </div>
-            <div class="icon-text">
-              <img src="Icons/Bad.png" alt="Bathrooms Icon" />
-              <p>2,5</p>
-            </div>
-          </div>
-          <div class="details">
-            <p class="dick">Garden:&nbsp;</p>
-            <p class="hell">Yes</p>
-          </div>
-          <div class="items">
-            <div class="button-wrapper">
-              <button class="icon-button" onclick="openModal('CadoganGF2',0)">
-                <img src="Icons/Pictures.png" alt="Pictures" />
-              </button>
-
-              <div
-                class="modal fade"
-                id="imageModalCadoganGF2"
-                aria-labelledby="imageModalLabel"
-                aria-hidden="true"
-                tabindex="-1"
-              >
-                <div class="modal-dialog modal-dialog-centered">
-                  <div class="modal-content bild">
-                    <div class="modal-body">
-                      <div id="modalCarouselCadoganGF2" class="carousel slide">
-                        <div class="carousel-inner"></div>
-                        <a
-                          class="carousel-control-prev"
-                          href="#modalCarouselCadoganGF2"
-                          role="button"
-                          data-bs-slide="prev"
-                        >
-                          <span
-                            class="carousel-control-prev-icon"
-                            aria-hidden="true"
-                          ></span>
-                          <span class="visually-hidden">Previous</span>
-                        </a>
-                        <a
-                          class="carousel-control-next"
-                          href="#modalCarouselCadoganGF2"
-                          role="button"
-                          data-bs-slide="next"
-                        >
-                          <span
-                            class="carousel-control-next-icon"
-                            aria-hidden="true"
-                          ></span>
-                          <span class="visually-hidden">Next</span>
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="tooltip">Pictures</div>
-            </div>
-            <p class="beschriftung-icons">12</p>
-            <div class="button-wrapper">
-              <button class="icon-button" onclick="openModal('CadoganGF2',1)">
-                <img src="Icons/FloorPlan.png" alt="FloorPlan" />
-              </button>
-              <div class="tooltip">Floor Plan</div>
-            </div>
-            <p class="beschriftung-icons">1</p>
-            <div class="button-wrapper">
-              <button onclick="googleMapsCadogan()" class="icon-button">
-                <img src="Icons/MapsIcon.png" alt="Maps" />
-              </button>
-              <div class="tooltip">Google Maps</div>
-            </div>
-            <div class="button-wrapper" style="margin-left: -22px">
-              <button
-                class="icon-button"
-                onclick="openVideoModal('CadoganGF2/V1.mp4')"
-              >
-                <img src="Icons/Video.png" alt="Video" />
-              </button>
-              <div class="tooltip">Video</div>
-            </div>
-            <p class="beschriftung-icons">1</p>
-
-            <!-- Video Modal -->
-            <div
-              class="modal fade"
-              id="videoModal"
-              tabindex="-1"
-              aria-labelledby="videoModalLabel"
-              aria-hidden="true"
-            >
-              <div class="modal-dialog modal-dialog-centered">
-                <div class="modal-content video">
-                  <div class="modal-body">
-                    <div class="video-wrapper">
-                      <video
-                        id="videoPlayer"
-                        class="video-player"
-                        controls
-                      ></video>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- Apartment 3 -->
+      <!-- Apartment 3 Egerton -->
 
       <div class="product">
         <div class="carousel-container">
@@ -594,7 +434,286 @@
           </div>
         </div>
       </div>
-      <!-- Apartment 4 -->
+      <!-- Apartment 5 Egerton-->
+
+      <div class="product">
+        <div class="carousel-container">
+          <div id="includedContent5"></div>
+        </div>
+        <div class="product-description">
+          <div class="description-header">
+            <div class="straße">
+              <h3>10 Egerton Place, London SW3 2EF</h3>
+              <div class="flatground">
+                <div class="dick">Flat &nbsp;</div>
+                <div class="hell">(Penthouse)</div>
+              </div>
+            </div>
+          </div>
+          <div class="flex-container">
+            <div
+              class="icon-text"
+              style="border-right: 1px solid #ddd; padding-right: 18px"
+            >
+              <img src="Icons/BettIcon.png" alt="Beds Icon" />
+              <p>4</p>
+            </div>
+            <div
+              class="icon-text"
+              style="border-right: 1px solid #ddd; padding-right: 18px"
+            >
+              <img src="Icons/QM.png" alt="Size Icon" />
+              <p>-</p>
+            </div>
+            <div class="icon-text">
+              <img src="Icons/Bad.png" alt="Bathrooms Icon" />
+              <p>2,5</p>
+            </div>
+          </div>
+          <div class="details">
+            <p class="dick">&nbsp;</p>
+            <p class="hell"></p>
+          </div>
+          <div class="items">
+            <div class="button-wrapper">
+              <button class="icon-button" onclick="openModal('EgertonPH5',0)">
+                <img src="Icons/Pictures.png" alt="Pictures" />
+              </button>
+
+              <div
+                class="modal fade"
+                id="imageModalEgertonPH5"
+                aria-labelledby="imageModalLabel"
+                aria-hidden="true"
+                tabindex="-1"
+              >
+                <div class="modal-dialog modal-dialog-centered">
+                  <div class="modal-content bild">
+                    <div class="modal-body">
+                      <div id="modalCarouselEgertonPH5" class="carousel slide">
+                        <div class="carousel-inner"></div>
+                        <a
+                          class="carousel-control-prev"
+                          href="#modalCarouselEgertonPH5"
+                          role="button"
+                          data-bs-slide="prev"
+                        >
+                          <span
+                            class="carousel-control-prev-icon"
+                            aria-hidden="true"
+                          ></span>
+                          <span class="visually-hidden">Previous</span>
+                        </a>
+                        <a
+                          class="carousel-control-next"
+                          href="#modalCarouselEgertonPH5"
+                          role="button"
+                          data-bs-slide="next"
+                        >
+                          <span
+                            class="carousel-control-next-icon"
+                            aria-hidden="true"
+                          ></span>
+                          <span class="visually-hidden">Next</span>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="tooltip">Pictures</div>
+            </div>
+            <p class="beschriftung-icons">16</p>
+            <div class="button-wrapper">
+              <button class="icon-button">
+                <img src="Icons/FloorPlan.png" alt="FloorPlan" />
+              </button>
+              <div class="tooltip">Floor Plan</div>
+            </div>
+            <p class="beschriftung-icons">0</p>
+            <div class="button-wrapper">
+              <button onclick="googleMapsEgerton()" class="icon-button">
+                <img src="Icons/MapsIcon.png" alt="Maps" />
+              </button>
+              <div class="tooltip">Google Maps</div>
+            </div>
+            <div class="button-wrapper" style="margin-left: -22px">
+              <button
+                class="icon-button"
+                onclick="openVideoModal('EgertonPH5/V1.mp4')"
+              >
+                <img src="Icons/Video.png" alt="Video" />
+              </button>
+              <div class="tooltip">Video</div>
+            </div>
+            <p class="beschriftung-icons">1</p>
+
+            <!-- Video Modal -->
+            <div
+              class="modal fade"
+              id="videoModal"
+              tabindex="-1"
+              aria-labelledby="videoModalLabel"
+              aria-hidden="true"
+            >
+              <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content video-modal-content">
+                  <div class="modal-body">
+                    <div class="video-wrapper">
+                      <video
+                        id="videoPlayer"
+                        class="video-player"
+                        controls
+                      ></video>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Apartment 7 Egerton-->
+
+      <div class="product">
+        <div class="carousel-container">
+          <div id="includedContent7"></div>
+        </div>
+        <div class="product-description">
+          <div class="description-header">
+            <div class="straße">
+              <h3>10 Egerton Place, London SW3 2EF</h3>
+              <div class="flatground">
+                <div class="dick">Flat &nbsp;</div>
+                <div class="hell">(Lower Ground)</div>
+              </div>
+            </div>
+          </div>
+          <div class="flex-container">
+            <div
+              class="icon-text"
+              style="border-right: 1px solid #ddd; padding-right: 18px"
+            >
+              <img src="Icons/BettIcon.png" alt="Beds Icon" />
+              <p>1</p>
+            </div>
+            <div
+              class="icon-text"
+              style="border-right: 1px solid #ddd; padding-right: 18px"
+            >
+              <img src="Icons/QM.png" alt="Size Icon" />
+              <p>-</p>
+            </div>
+            <div class="icon-text">
+              <img src="Icons/Bad.png" alt="Bathrooms Icon" />
+              <p>1</p>
+            </div>
+          </div>
+          <div class="details">
+            <p class="dick">&nbsp;</p>
+            <p class="hell"></p>
+          </div>
+          <div class="items">
+            <div class="button-wrapper">
+              <button class="icon-button" onclick="openModal('EgertonLG7',0)">
+                <img src="Icons/Pictures.png" alt="Pictures" />
+              </button>
+
+              <div
+                class="modal fade"
+                id="imageModalEgertonLG7"
+                aria-labelledby="imageModalLabel"
+                aria-hidden="true"
+                tabindex="-1"
+              >
+                <div class="modal-dialog modal-dialog-centered">
+                  <div class="modal-content bild">
+                    <div class="modal-body">
+                      <div id="modalCarouselEgertonLG7" class="carousel slide">
+                        <div class="carousel-inner"></div>
+                        <a
+                          class="carousel-control-prev"
+                          href="#modalCarouselEgertonLG7"
+                          role="button"
+                          data-bs-slide="prev"
+                        >
+                          <span
+                            class="carousel-control-prev-icon"
+                            aria-hidden="true"
+                          ></span>
+                          <span class="visually-hidden">Previous</span>
+                        </a>
+                        <a
+                          class="carousel-control-next"
+                          href="#modalCarouselEgertonLG7"
+                          role="button"
+                          data-bs-slide="next"
+                        >
+                          <span
+                            class="carousel-control-next-icon"
+                            aria-hidden="true"
+                          ></span>
+                          <span class="visually-hidden">Next</span>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="tooltip">Pictures</div>
+            </div>
+            <p class="beschriftung-icons">8</p>
+            <div class="button-wrapper">
+              <button onclick="googleMaps()" class="icon-button">
+                <img src="Icons/FloorPlan.png" alt="FloorPlan" />
+              </button>
+              <div class="tooltip">Floor Plan</div>
+            </div>
+            <p class="beschriftung-icons">0</p>
+            <div class="button-wrapper">
+              <button onclick="googleMapsEgerton()" class="icon-button">
+                <img src="Icons/MapsIcon.png" alt="Maps" />
+              </button>
+              <div class="tooltip">Google Maps</div>
+            </div>
+            <div class="button-wrapper" style="margin-left: -22px">
+              <button
+                class="icon-button"
+                onclick="openVideoModal('EgertonLG7/V1.mp4')"
+              >
+                <img src="Icons/Video.png" alt="Video" />
+              </button>
+              <div class="tooltip">Video</div>
+            </div>
+            <p class="beschriftung-icons">1</p>
+
+            <!-- Video Modal -->
+            <div
+              class="modal fade"
+              id="videoModal"
+              tabindex="-1"
+              aria-labelledby="videoModalLabel"
+              aria-hidden="true"
+            >
+              <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content video-modal-content">
+                  <div class="modal-body">
+                    <div class="video-wrapper">
+                      <video
+                        id="videoPlayer"
+                        class="video-player"
+                        controls
+                      ></video>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Apartment 4 QueensGate-->
 
       <div class="product">
         <div class="carousel-container">
@@ -739,146 +858,8 @@
           </div>
         </div>
       </div>
-      <!-- Apartment 5 -->
 
-      <div class="product">
-        <div class="carousel-container">
-          <div id="includedContent5"></div>
-        </div>
-        <div class="product-description">
-          <div class="description-header">
-            <div class="straße">
-              <h3>10 Egerton Place, London SW3 2EF</h3>
-              <div class="flatground">
-                <div class="dick">Flat &nbsp;</div>
-                <div class="hell">(Penthouse)</div>
-              </div>
-            </div>
-          </div>
-          <div class="flex-container">
-            <div
-              class="icon-text"
-              style="border-right: 1px solid #ddd; padding-right: 18px"
-            >
-              <img src="Icons/BettIcon.png" alt="Beds Icon" />
-              <p>4</p>
-            </div>
-            <div
-              class="icon-text"
-              style="border-right: 1px solid #ddd; padding-right: 18px"
-            >
-              <img src="Icons/QM.png" alt="Size Icon" />
-              <p>-</p>
-            </div>
-            <div class="icon-text">
-              <img src="Icons/Bad.png" alt="Bathrooms Icon" />
-              <p>2,5</p>
-            </div>
-          </div>
-          <div class="details">
-            <p class="dick">&nbsp;</p>
-            <p class="hell"></p>
-          </div>
-          <div class="items">
-            <div class="button-wrapper">
-              <button class="icon-button" onclick="openModal('EgertonPH5',0)">
-                <img src="Icons/Pictures.png" alt="Pictures" />
-              </button>
-
-              <div
-                class="modal fade"
-                id="imageModalEgertonPH5"
-                aria-labelledby="imageModalLabel"
-                aria-hidden="true"
-                tabindex="-1"
-              >
-                <div class="modal-dialog modal-dialog-centered">
-                  <div class="modal-content bild">
-                    <div class="modal-body">
-                      <div id="modalCarouselEgertonPH5" class="carousel slide">
-                        <div class="carousel-inner"></div>
-                        <a
-                          class="carousel-control-prev"
-                          href="#modalCarouselEgertonPH5"
-                          role="button"
-                          data-bs-slide="prev"
-                        >
-                          <span
-                            class="carousel-control-prev-icon"
-                            aria-hidden="true"
-                          ></span>
-                          <span class="visually-hidden">Previous</span>
-                        </a>
-                        <a
-                          class="carousel-control-next"
-                          href="#modalCarouselEgertonPH5"
-                          role="button"
-                          data-bs-slide="next"
-                        >
-                          <span
-                            class="carousel-control-next-icon"
-                            aria-hidden="true"
-                          ></span>
-                          <span class="visually-hidden">Next</span>
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="tooltip">Pictures</div>
-            </div>
-            <p class="beschriftung-icons">16</p>
-            <div class="button-wrapper">
-              <button class="icon-button">
-                <img src="Icons/FloorPlan.png" alt="FloorPlan" />
-              </button>
-              <div class="tooltip">Floor Plan</div>
-            </div>
-            <p class="beschriftung-icons">0</p>
-            <div class="button-wrapper">
-              <button onclick="googleMapsEgerton()" class="icon-button">
-                <img src="Icons/MapsIcon.png" alt="Maps" />
-              </button>
-              <div class="tooltip">Google Maps</div>
-            </div>
-            <div class="button-wrapper" style="margin-left: -22px">
-              <button
-                class="icon-button"
-                onclick="openVideoModal('EgertonPH5/V1.mp4')"
-              >
-                <img src="Icons/Video.png" alt="Video" />
-              </button>
-              <div class="tooltip">Video</div>
-            </div>
-            <p class="beschriftung-icons">1</p>
-
-            <!-- Video Modal -->
-            <div
-              class="modal fade"
-              id="videoModal"
-              tabindex="-1"
-              aria-labelledby="videoModalLabel"
-              aria-hidden="true"
-            >
-              <div class="modal-dialog modal-dialog-centered">
-                <div class="modal-content video-modal-content">
-                  <div class="modal-body">
-                    <div class="video-wrapper">
-                      <video
-                        id="videoPlayer"
-                        class="video-player"
-                        controls
-                      ></video>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- Apartment 6 -->
+      <!-- Apartment 6 Milner-->
 
       <div class="product">
         <div class="carousel-container">
@@ -1014,146 +995,8 @@
           </div>
         </div>
       </div>
-      <!-- Apartment 7 -->
 
-      <div class="product">
-        <div class="carousel-container">
-          <div id="includedContent7"></div>
-        </div>
-        <div class="product-description">
-          <div class="description-header">
-            <div class="straße">
-              <h3>10 Egerton Place, London SW3 2EF</h3>
-              <div class="flatground">
-                <div class="dick">Flat &nbsp;</div>
-                <div class="hell">(Lower Ground)</div>
-              </div>
-            </div>
-          </div>
-          <div class="flex-container">
-            <div
-              class="icon-text"
-              style="border-right: 1px solid #ddd; padding-right: 18px"
-            >
-              <img src="Icons/BettIcon.png" alt="Beds Icon" />
-              <p>1</p>
-            </div>
-            <div
-              class="icon-text"
-              style="border-right: 1px solid #ddd; padding-right: 18px"
-            >
-              <img src="Icons/QM.png" alt="Size Icon" />
-              <p>-</p>
-            </div>
-            <div class="icon-text">
-              <img src="Icons/Bad.png" alt="Bathrooms Icon" />
-              <p>1</p>
-            </div>
-          </div>
-          <div class="details">
-            <p class="dick">&nbsp;</p>
-            <p class="hell"></p>
-          </div>
-          <div class="items">
-            <div class="button-wrapper">
-              <button class="icon-button" onclick="openModal('EgertonLG7',0)">
-                <img src="Icons/Pictures.png" alt="Pictures" />
-              </button>
-
-              <div
-                class="modal fade"
-                id="imageModalEgertonLG7"
-                aria-labelledby="imageModalLabel"
-                aria-hidden="true"
-                tabindex="-1"
-              >
-                <div class="modal-dialog modal-dialog-centered">
-                  <div class="modal-content bild">
-                    <div class="modal-body">
-                      <div id="modalCarouselEgertonLG7" class="carousel slide">
-                        <div class="carousel-inner"></div>
-                        <a
-                          class="carousel-control-prev"
-                          href="#modalCarouselEgertonLG7"
-                          role="button"
-                          data-bs-slide="prev"
-                        >
-                          <span
-                            class="carousel-control-prev-icon"
-                            aria-hidden="true"
-                          ></span>
-                          <span class="visually-hidden">Previous</span>
-                        </a>
-                        <a
-                          class="carousel-control-next"
-                          href="#modalCarouselEgertonLG7"
-                          role="button"
-                          data-bs-slide="next"
-                        >
-                          <span
-                            class="carousel-control-next-icon"
-                            aria-hidden="true"
-                          ></span>
-                          <span class="visually-hidden">Next</span>
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="tooltip">Pictures</div>
-            </div>
-            <p class="beschriftung-icons">8</p>
-            <div class="button-wrapper">
-              <button onclick="googleMaps()" class="icon-button">
-                <img src="Icons/FloorPlan.png" alt="FloorPlan" />
-              </button>
-              <div class="tooltip">Floor Plan</div>
-            </div>
-            <p class="beschriftung-icons">0</p>
-            <div class="button-wrapper">
-              <button onclick="googleMapsEgerton()" class="icon-button">
-                <img src="Icons/MapsIcon.png" alt="Maps" />
-              </button>
-              <div class="tooltip">Google Maps</div>
-            </div>
-            <div class="button-wrapper" style="margin-left: -22px">
-              <button
-                class="icon-button"
-                onclick="openVideoModal('EgertonLG7/V1.mp4')"
-              >
-                <img src="Icons/Video.png" alt="Video" />
-              </button>
-              <div class="tooltip">Video</div>
-            </div>
-            <p class="beschriftung-icons">1</p>
-
-            <!-- Video Modal -->
-            <div
-              class="modal fade"
-              id="videoModal"
-              tabindex="-1"
-              aria-labelledby="videoModalLabel"
-              aria-hidden="true"
-            >
-              <div class="modal-dialog modal-dialog-centered">
-                <div class="modal-content video-modal-content">
-                  <div class="modal-body">
-                    <div class="video-wrapper">
-                      <video
-                        id="videoPlayer"
-                        class="video-player"
-                        controls
-                      ></video>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- Apartment 8 -->
+      <!-- Apartment 8 Maddox-->
       <div class="product">
         <div class="carousel-container">
           <div id="includedContent8"></div>
@@ -1290,7 +1133,7 @@
           </div>
         </div>
       </div>
-      <!-- Apartment 9 -->
+      <!-- Apartment 9 Maddox-->
       <div class="product">
         <div class="carousel-container">
           <div id="includedContent9"></div>
@@ -1427,7 +1270,7 @@
           </div>
         </div>
       </div>
-      <!-- Apartment 10 -->
+      <!-- Apartment 10 Maddox-->
       <div class="product">
         <div class="carousel-container">
           <div id="includedContent10"></div>
@@ -1564,7 +1407,7 @@
           </div>
         </div>
       </div>
-      <!-- Apartment 11 -->
+      <!-- Apartment 11 Maddox-->
       <div class="product">
         <div class="carousel-container">
           <div id="includedContent11"></div>
@@ -1701,7 +1544,7 @@
           </div>
         </div>
       </div>
-      <!-- Apartment 12 -->
+      <!-- Apartment 12 Maddox-->
       <div class="product">
         <div class="carousel-container">
           <div id="includedContent12"></div>
@@ -1838,6 +1681,284 @@
           </div>
         </div>
       </div>
+      <!-- Apartment 2 Cadogan -->
+
+      <div class="product">
+        <div class="carousel-container">
+          <div id="includedContent2"></div>
+        </div>
+        <div class="product-description">
+          <div class="description-header">
+            <div class="straße">
+              <h3>38 Cadogan Square, London SW1X 0JL</h3>
+              <div class="flatground">
+                <div class="dick">Flat &nbsp;</div>
+                <div class="hell">(Ground Floor)</div>
+              </div>
+            </div>
+          </div>
+          <div class="flex-container">
+            <div
+              class="icon-text"
+              style="border-right: 1px solid #ddd; padding-right: 18px"
+            >
+              <img src="Icons/BettIcon.png" alt="Beds Icon" />
+              <p>3</p>
+            </div>
+            <div
+              class="icon-text"
+              style="border-right: 1px solid #ddd; padding-right: 18px"
+            >
+              <img src="Icons/QM.png" alt="Size Icon" />
+              <p>1621 Sq Ft</p>
+            </div>
+            <div class="icon-text">
+              <img src="Icons/Bad.png" alt="Bathrooms Icon" />
+              <p>2,5</p>
+            </div>
+          </div>
+          <div class="details">
+            <p class="dick">Garden:&nbsp;</p>
+            <p class="hell">Yes</p>
+          </div>
+          <div class="items">
+            <div class="button-wrapper">
+              <button class="icon-button" onclick="openModal('CadoganGF2',0)">
+                <img src="Icons/Pictures.png" alt="Pictures" />
+              </button>
+
+              <div
+                class="modal fade"
+                id="imageModalCadoganGF2"
+                aria-labelledby="imageModalLabel"
+                aria-hidden="true"
+                tabindex="-1"
+              >
+                <div class="modal-dialog modal-dialog-centered">
+                  <div class="modal-content bild">
+                    <div class="modal-body">
+                      <div id="modalCarouselCadoganGF2" class="carousel slide">
+                        <div class="carousel-inner"></div>
+                        <a
+                          class="carousel-control-prev"
+                          href="#modalCarouselCadoganGF2"
+                          role="button"
+                          data-bs-slide="prev"
+                        >
+                          <span
+                            class="carousel-control-prev-icon"
+                            aria-hidden="true"
+                          ></span>
+                          <span class="visually-hidden">Previous</span>
+                        </a>
+                        <a
+                          class="carousel-control-next"
+                          href="#modalCarouselCadoganGF2"
+                          role="button"
+                          data-bs-slide="next"
+                        >
+                          <span
+                            class="carousel-control-next-icon"
+                            aria-hidden="true"
+                          ></span>
+                          <span class="visually-hidden">Next</span>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="tooltip">Pictures</div>
+            </div>
+            <p class="beschriftung-icons">12</p>
+            <div class="button-wrapper">
+              <button class="icon-button" onclick="openModal('CadoganGF2',1)">
+                <img src="Icons/FloorPlan.png" alt="FloorPlan" />
+              </button>
+              <div class="tooltip">Floor Plan</div>
+            </div>
+            <p class="beschriftung-icons">1</p>
+            <div class="button-wrapper">
+              <button onclick="googleMaps38Cadogan()" class="icon-button">
+                <img src="Icons/MapsIcon.png" alt="Maps" />
+              </button>
+              <div class="tooltip">Google Maps</div>
+            </div>
+            <div class="button-wrapper" style="margin-left: -22px">
+              <button
+                class="icon-button"
+                onclick="openVideoModal('CadoganGF2/V1.mp4')"
+              >
+                <img src="Icons/Video.png" alt="Video" />
+              </button>
+              <div class="tooltip">Video</div>
+            </div>
+            <p class="beschriftung-icons">1</p>
+
+            <!-- Video Modal -->
+            <div
+              class="modal fade"
+              id="videoModal"
+              tabindex="-1"
+              aria-labelledby="videoModalLabel"
+              aria-hidden="true"
+            >
+              <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content video">
+                  <div class="modal-body">
+                    <div class="video-wrapper">
+                      <video
+                        id="videoPlayer"
+                        class="video-player"
+                        controls
+                      ></video>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Apartment 13 Cadogan -->
+
+      <div class="product">
+        <div class="carousel-container">
+          <div id="includedContent13"></div>
+        </div>
+        <div class="product-description">
+          <div class="description-header">
+            <div class="straße">
+              <h3>42 Cadogan Square, London SW1X 0JW</h3>
+              <div class="flatground">
+                <div class="dick">Flat &nbsp;</div>
+                <div class="hell">(Lower Ground)</div>
+              </div>
+            </div>
+          </div>
+          <div class="flex-container">
+            <div
+              class="icon-text"
+              style="border-right: 1px solid #ddd; padding-right: 18px"
+            >
+              <img src="Icons/BettIcon.png" alt="Beds Icon" />
+              <p>3</p>
+            </div>
+            <div
+              class="icon-text"
+              style="border-right: 1px solid #ddd; padding-right: 18px"
+            >
+              <img src="Icons/QM.png" alt="Size Icon" />
+              <p>-</p>
+            </div>
+            <div class="icon-text">
+              <img src="Icons/Bad.png" alt="Bathrooms Icon" />
+              <p>1</p>
+            </div>
+          </div>
+          <div class="details">
+            <p class="dick">&nbsp;</p>
+            <p class="hell"></p>
+          </div>
+          <div class="items">
+            <div class="button-wrapper">
+              <button class="icon-button" onclick="openModal('CadoganLW13',0)">
+                <img src="Icons/Pictures.png" alt="Pictures" />
+              </button>
+
+              <div
+                class="modal fade"
+                id="imageModalCadoganLW13"
+                aria-labelledby="imageModalLabel"
+                aria-hidden="true"
+                tabindex="-1"
+              >
+                <div class="modal-dialog modal-dialog-centered">
+                  <div class="modal-content bild">
+                    <div class="modal-body">
+                      <div id="modalCarouselCadoganLW13" class="carousel slide">
+                        <div class="carousel-inner"></div>
+                        <a
+                          class="carousel-control-prev"
+                          href="#modalCarouselCadoganGF2"
+                          role="button"
+                          data-bs-slide="prev"
+                        >
+                          <span
+                            class="carousel-control-prev-icon"
+                            aria-hidden="true"
+                          ></span>
+                          <span class="visually-hidden">Previous</span>
+                        </a>
+                        <a
+                          class="carousel-control-next"
+                          href="#modalCarouselCadoganLW13"
+                          role="button"
+                          data-bs-slide="next"
+                        >
+                          <span
+                            class="carousel-control-next-icon"
+                            aria-hidden="true"
+                          ></span>
+                          <span class="visually-hidden">Next</span>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="tooltip">Pictures</div>
+            </div>
+            <p class="beschriftung-icons">16</p>
+            <div class="button-wrapper">
+              <button class="icon-button">
+                <img src="Icons/FloorPlan.png" alt="FloorPlan" />
+              </button>
+              <div class="tooltip">Floor Plan</div>
+            </div>
+            <p class="beschriftung-icons">0</p>
+            <div class="button-wrapper">
+              <button onclick="googleMaps42Cadogan()" class="icon-button">
+                <img src="Icons/MapsIcon.png" alt="Maps" />
+              </button>
+              <div class="tooltip">Google Maps</div>
+            </div>
+            <div class="button-wrapper" style="margin-left: -22px">
+              <button
+                class="icon-button"
+                onclick="openVideoModal('CadoganLW13/V1.mp4')"
+              >
+                <img src="Icons/Video.png" alt="Video" />
+              </button>
+              <div class="tooltip">Video</div>
+            </div>
+            <p class="beschriftung-icons">1</p>
+
+            <!-- Video Modal -->
+            <div
+              class="modal fade"
+              id="videoModal"
+              tabindex="-1"
+              aria-labelledby="videoModalLabel"
+              aria-hidden="true"
+            >
+              <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content video">
+                  <div class="modal-body">
+                    <div class="video-wrapper">
+                      <video
+                        id="videoPlayer"
+                        class="video-player"
+                        controls
+                      ></video>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </body>
   <script>
@@ -1854,6 +1975,7 @@
       $("#includedContent10").load("kMaddoxTF10.html");
       $("#includedContent11").load("kMaddoxFoF11.html");
       $("#includedContent12").load("kMaddoxLG12.html");
+      $("#includedContent13").load("kCadoganLW13.html");
     });
 
     function googleMapsEgerton() {
@@ -1862,9 +1984,15 @@
         "_blank"
       );
     }
-    function googleMapsCadogan() {
+    function googleMaps38Cadogan() {
       window.open(
         "https://www.google.de/maps/place/38+Cadogan+Square,+London+SW1X+0JL,+Vereinigtes+Königreich/@51.4958584,-0.1641793,17z/data=!3m1!4b1!4m6!3m5!1s0x4876053fad7a56a5:0x156ac05b2a787c92!8m2!3d51.4958584!4d-0.1616044!16s%2Fg%2F11bw4307c6?entry=ttu",
+        "_blank"
+      );
+    }
+    function googleMaps42Cadogan() {
+      window.open(
+        "https://www.google.de/maps/place/42+Cadogan+Square,+London+SW1X+0JW,+Vereinigtes+Königreich/@51.4957291,-0.1664055,16z/data=!3m1!4b1!4m6!3m5!1s0x4876053fb2e955e5:0xc732c57d7dd89da3!8m2!3d51.4957292!4d-0.1615346!16s%2Fg%2F11cnd90n4_?entry=ttu&g_ep=EgoyMDI0MDgyMS4wIKXMDSoASAFQAw%3D%3D",
         "_blank"
       );
     }
@@ -2082,6 +2210,24 @@
         "MaddoxLG12/B29.jpg",
         "MaddoxLG12/B30.jpg",
       ],
+      CadoganLW13: [
+        "CadoganLW13/B1.jpg",
+        "CadoganLW13/B2.jpg",
+        "CadoganLW13/B3.jpg",
+        "CadoganLW13/B4.jpg",
+        "CadoganLW13/B5.jpg",
+        "CadoganLW13/B6.jpg",
+        "CadoganLW13/B7.jpg",
+        "CadoganLW13/B8.jpg",
+        "CadoganLW13/B9.jpg",
+        "CadoganLW13/B10.jpg",
+        "CadoganLW13/B11.jpg",
+        "CadoganLW13/B12.jpg",
+        "CadoganLW13/B13.jpg",
+        "CadoganLW13/B14.jpg",
+        "CadoganLW13/B15.jpg",
+        "CadoganLW13/B16.jpg",
+      ],
     };
 
     function openModal(modalId, index) {
@@ -2146,6 +2292,7 @@
       if (contactTooltip.style.display === "block") {
         contactTooltip.style.display = "none";
       } else {
+        // Zeige das Pop-up an
         contactTooltip.style.display = "block";
       }
     }
@@ -2182,7 +2329,7 @@
       );
       if (document.getElementById("body").getBoundingClientRect().width < 812) {
         // Verkleinere den Header und das Bild basierend auf der Scroll-Position
-        if (scrollPosition > 70) {
+        if (scrollPosition > 100) {
           kleinheader.style.height = "50px"; // Verkleinern des Headers
           kleinprofilbild.style.height = "38px"; // Verkleinern des Profilbildes
           kleinprofilbild.style.width = "85px"; // Verkleinern des Profilbildes
@@ -2205,9 +2352,13 @@
       //Normalheader verkleinern
       const normalheader = document.getElementById("normalprofile");
       const normalprofilbild = document.getElementById("normalprofileimg");
+      const headerrechts = document.getElementById("headerrechts");
+      const contactButtonWrapperDummy = document.getElementById(
+        "contact-button-wrapper-dummy"
+      );
       const kleiner = document.getElementById("kleiner");
       const fadeStart = 0; // Scrollposition, ab der die Verblassung beginnt
-      const fadeEnd = 200; // Scrollposition, bei der das Element vollständig unsichtbar sein soll
+      const fadeEnd = 90; // Scrollposition, bei der das Element vollständig unsichtbar sein soll
       if (scrollPosition >= fadeStart && scrollPosition <= fadeEnd) {
         // Berechne die neue Opazität basierend auf der Scrollposition
         const opacity =
@@ -2225,13 +2376,24 @@
         normalheader.style.height = "60px";
         normalprofilbild.style.height = "64px"; // Verkleinern des Profilbildes
         normalprofilbild.style.width = "142px"; // Verkleinern des Profilbildes
+        headerrechts.style.display = "none";
+        normalheader.style.width = "170px";
+        contactButtonWrapperDummy.style.display = "block";
       } else {
         kleiner.style.display = "block";
         normalheader.style.height = "100px";
-
         normalprofilbild.style.height = "99px"; // Ursprüngliche Größe des Profilbildes
         normalprofilbild.style.width = "218px"; // Ursprüngliche Größe des Profilbildes}
+        headerrechts.style.display = "block";
+        normalheader.style.width = "250px";
+        contactButtonWrapperDummy.style.display = "none";
       }
+    }
+    function scrollToTop() {
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+      });
     }
   </script>
 </html>

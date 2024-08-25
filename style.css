@@ -56,11 +56,9 @@ pre {
 
 /* Header */
 .header {
-  display: flex;
   align-items: center;
   padding-left: 1rem;
   padding-top: 1rem;
-
   background-color: transparent;
   text-align: right;
   font-family: "MeineSchriftart3";
@@ -72,16 +70,10 @@ pre {
 }
 
 .header h1 {
+  transition: height 0.3s ease, width 0.3s ease;
   font-size: 2rem;
   line-height: 1.2;
   letter-spacing: 1px;
-}
-
-.header-main {
-  color: #7a7474;
-}
-
-.header-subtitle {
   color: #7a7474;
 }
 

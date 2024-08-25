@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Apartments</title>
+    <link rel="stylesheet" href="BSKaru.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  </head>
+  <body>
+    <!-- Hauptkarussell -->
+    <div id="myCarousel13" class="carousel slide">
+      <ol class="carousel-indicators" id="carouselIndicators13"></ol>
+      <div class="carousel-inner" id="carouselInner13"></div>
+      <a
+        class="carousel-control-prev"
+        href="#myCarousel13"
+        role="button"
+        data-bs-slide="prev"
+      >
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </a>
+      <a
+        class="carousel-control-next"
+        href="#myCarousel13"
+        role="button"
+        data-bs-slide="next"
+      >
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </a>
+    </div>
+
+    <!-- Modal für Bildvergrößerung -->
+    <div
+      class="modal fade"
+      id="imageModal13"
+      tabindex="-1"
+      aria-labelledby="imageModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content bild">
+          <div class="modal-body">
+            <div id="modalCarousel13" class="carousel slide">
+              <div class="carousel-inner"></div>
+              <a
+                class="carousel-control-prev"
+                href="#modalCarousel13"
+                role="button"
+                data-bs-slide="prev"
+              >
+                <span
+                  class="carousel-control-prev-icon"
+                  aria-hidden="true"
+                ></span>
+                <span class="visually-hidden">Previous</span>
+              </a>
+              <a
+                class="carousel-control-next"
+                href="#modalCarousel13"
+                role="button"
+                data-bs-slide="next"
+              >
+                <span
+                  class="carousel-control-next-icon"
+                  aria-hidden="true"
+                ></span>
+                <span class="visually-hidden">Next</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      // Bildquellen für das Karussell
+      const imageSources13 = [
+        "CadoganLW13/B1.jpg",
+        "CadoganLW13/B2.jpg",
+        "CadoganLW13/B3.jpg",
+        "CadoganLW13/B4.jpg",
+        "CadoganLW13/B5.jpg",
+        "CadoganLW13/B6.jpg",
+        "CadoganLW13/B7.jpg",
+        "CadoganLW13/B8.jpg",
+        "CadoganLW13/B9.jpg",
+        "CadoganLW13/B10.jpg",
+        "CadoganLW13/B11.jpg",
+        "CadoganLW13/B12.jpg",
+        "CadoganLW13/B13.jpg",
+        "CadoganLW13/B14.jpg",
+        "CadoganLW13/B15.jpg",
+        "CadoganLW13/B16.jpg",
+      ];
+
+      // Dynamisches Erzeugen des Hauptkarussells
+      const carouselIndicators13 = document.getElementById(
+        "carouselIndicators13"
+      );
+      const carouselInner13 = document.getElementById("carouselInner13");
+
+      imageSources13.forEach((src, index) => {
+        // Erstellen des Indikators
+        const indicator = document.createElement("button");
+        indicator.setAttribute("type", "button");
+        indicator.setAttribute("data-bs-target", "#myCarousel13");
+        indicator.setAttribute("data-bs-slide-to", index);
+        if (index === 0) indicator.classList.add("active");
+        carouselIndicators13.appendChild(indicator);
+
+        // Erstellen des Karussellitems
+        const item = document.createElement("div");
+        item.className = `carousel-item${index === 0 ? " active" : ""}`;
+        item.innerHTML = `
+          <img src="${src}" class="d-block w-100" onclick="openModal13(${index})" alt="Apartment ${
+          index + 1
+        }">
+        `;
+        carouselInner13.appendChild(item);
+      });
+
+      // Dynamisches Erzeugen des Modal-Karussells
+      const modalCarouselInner13 = document.querySelector(
+        "#modalCarousel13 .carousel-inner"
+      );
+      imageSources13.forEach((src, index) => {
+        const item = document.createElement("div");
+        item.className = `carousel-item${index === 0 ? " active" : ""}`;
+        item.innerHTML = `
+          <img src="${src}" class="d-block w-100" alt="Vergrößertes Bild">
+        `;
+        modalCarouselInner13.appendChild(item);
+      });
+
+      // Funktion zum Öffnen des Modals
+      function openModal13(index) {
+        const modalCarousel = document.querySelector("#modalCarousel13");
+        const modalCarouselInner13 =
+          modalCarousel.querySelector(".carousel-inner");
+
+        // Leeren des Modal-Karussells
+        modalCarouselInner13.innerHTML = "";
+
+        // Erneutes Erzeugen des Modal-Karussells mit dem richtigen Bild aktiv
+        imageSources13.forEach((src, i) => {
+          const item = document.createElement("div");
+          item.className = `carousel-item${i === index ? " active" : ""}`;
+          item.innerHTML = `
+            <img src="${src}" class="d-block w-100" alt="Vergrößertes Bild">
+          `;
+          modalCarouselInner13.appendChild(item);
+        });
+
+        // Öffnen des Modals
+        const modal = new bootstrap.Modal(
+          document.getElementById("imageModal13")
+        );
+        modal.show();
+
+        // Nach dem Öffnen des Modals auf das richtige Bild setzen
+        const modalCarouselInstance =
+          bootstrap.Carousel.getInstance(modalCarousel);
+        if (modalCarouselInstance) {
+          modalCarouselInstance.to(index); // Wechselt zu dem Bild im Modal-Karussell
+        } else {
+          new bootstrap.Carousel(modalCarousel, {
+            interval: false, // Verhindert automatisches Wechseln der Bilder
+          }).to(index); // Wechselt zu dem Bild im Modal-Karussell
+        }
+      }
+    </script>
+  </body>
+</html>

@@ -37,17 +37,18 @@
   height: 100px;
   display: flex; /* Flexbox aktivieren */
   align-items: center; /* Vertikale Ausrichtung der Elemente */
-  justify-content: space-between; /* Platzierung der Elemente: Bild links, Rest rechts */
-  width: 100%; /* Profile kann eine bestimmte Breite oder die volle Breite haben */
-  padding: 20px; /* Optional: Abstand innerhalb des Containers */
+  width: 250px; /* Profile kann eine bestimmte Breite oder die volle Breite haben */
+  padding-right: 20px; /* Optional: Abstand innerhalb des Containers */
+  padding-top: 20px;
+  padding-bottom: 20px;
   transition: height 0.3s ease;
 }
 .carousel.slide {
   margin-bottom: 0;
 }
 .profile-header {
+  justify-content: space-between;
   display: flex;
-  justify-content: space-between; /* Abstand zwischen Profil und Header */
   align-items: center; /* Vertikale Ausrichtung auf gleicher Höhe */
   border-bottom: 1px solid #ddd;
   margin-bottom: 20px;
@@ -118,6 +119,13 @@
     display: none !important;
   }
 }
+@media (max-width: 992px) {
+  .kleiner {
+    display: none !important;
+    padding: 10px;
+    border: 1px solid #ddd;
+  }
+}
 @media (max-width: 812px) {
   .profile img {
     display: none;
@@ -166,12 +174,7 @@
     font-family: "MeineSchriftart";
     margin-bottom: 5px;
   }
-  .kleiner {
-    visibility: hidden;
-    display: block;
-    padding: 10px;
-    border: 1px solid #ddd;
-  }
+
   .profil-ausrichtung {
     align-items: center;
   }
@@ -193,16 +196,24 @@
   z-index: 1000;
 }
 .contact-button-wrapper img {
-  width: 25px;
-  height: 25px;
+  width: 18px;
+  height: 18px;
+}
+.kontakt-button:focus,
+.kontakt-button:active,
+.kontakt-button:hover {
+  outline: none;
+  box-shadow: none;
+  border: none;
+  transition: none;
 }
 .contact-tooltip {
   align-items: center;
   text-align: center;
   display: none;
-  position: fixed;
-  top: 18%;
-  left: 70%;
+  position: absolute;
+  top: 49%; /* Vertikale Position relativ zum Button */
+  left: -110px; /* Negativer Wert, um das Pop-up links vom Button zu platzieren */
   transform: translate(-50%, -50%);
   background-color: white;
   border-radius: 10px;
@@ -217,16 +228,18 @@
 .contact-tooltip::before {
   content: "";
   position: absolute;
-  bottom: 50%;
+  bottom: 38%;
   left: 107%;
   transform: translateX(-50%);
-  border-width: 10px;
-  border-style: solid;
-  border-right: 10px solid transparent;
 
-  border-top: 10px solid transparent;
-  border-bottom: 10px solid transparent;
-  border-left: 20px solid rgb(255, 255, 255);
+  /* Breite des Pfeils anpassen */
+  border-width: 15px 25px 15px 10px; /* top right bottom left */
+
+  border-style: solid;
+  border-color: transparent transparent transparent white;
+
+  /* Abrundung der Ecken für Sprechblasen-Effekt */
+  border-radius: 5px;
 }
 @media (max-width: 812px) {
   #contactSection {
@@ -236,6 +249,9 @@
   .contact-button-wrapper {
     display: block;
   }
+  .contact-button-wrapper-dummy {
+    display: none;
+  }
 }
 @media (min-width: 812px) {
   .contact-tooltip {
@@ -243,22 +259,67 @@
   }
 }
 .kontakt-button {
+  border: none;
   margin-top: 10px;
   margin-bottom: 10px;
-
-  height: 40px;
-  width: 40px;
+  height: 10px;
+  width: 10px;
   display: flex;
   -webkit-box-align: center;
   align-items: center;
   -webkit-box-pack: center;
   justify-content: center;
+  border-bottom: 2px solid #000000;
+  padding: 20px;
   border-top-left-radius: 50%;
   border-top-right-radius: 50%;
   border-bottom-right-radius: 50%;
   border-bottom-left-radius: 50%;
   text-decoration-line: none;
   background-color: rgb(0, 0, 0);
+  text-decoration: none;
+  outline: none;
+
+  /* Entferne Animationen und Browser-Default-Effekte */
+}
+.kontakt-button-dummy {
+  border: none;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  height: 10px;
+  width: 10px;
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  justify-content: center;
+  border-bottom: 2px solid #000000;
+  padding: 20px;
+  border-top-left-radius: 50%;
+  border-top-right-radius: 50%;
+  border-bottom-right-radius: 50%;
+  border-bottom-left-radius: 50%;
+  text-decoration-line: none;
+  background-color: rgb(0, 0, 0);
+  text-decoration: none;
+  outline: none;
+
+  /* Entferne Animationen und Browser-Default-Effekte */
+}
+@media (max-width: 812px) {
+  .contact-button-wrapper-dummy {
+    display: none !important;
+  }
+}
+.contact-button-wrapper-dummy {
+  background-color: transparent;
+  display: none;
+  z-index: 1000;
+  text-align: right;
+}
+.contact-button-wrapper-dummy img {
+  width: 18px;
+  height: 18px;
 }
 .kontaktboxicon {
   height: 13px;
