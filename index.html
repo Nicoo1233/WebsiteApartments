@@ -16,7 +16,7 @@
     <link rel="stylesheet" href="navbar.css" />
     <link rel="stylesheet" href="BSKaru.css" />
   </head>
-  <body style="background-color: rgb(248, 249, 250)" id="body">
+  <body id="body" style="background-color: rgb(248, 249, 250)">
     <div class="container">
       <nav class="navbar top sticky-top bg-body-tertiary">
         <div class="kleinprofile" id="kleinprofile" onClick="scrollToTop()">
@@ -263,12 +263,15 @@
               <div class="tooltip">Google Maps</div>
             </div>
             <div class="button-wrapper" style="margin-left: -22px">
-              <button class="icon-button">
+              <button
+                class="icon-button"
+                onclick="openVideoModal('EgertonGF1/V1.mp4')"
+              >
                 <img src="Icons/Video.png" alt="Video" />
               </button>
               <div class="tooltip">Video</div>
             </div>
-            <p class="beschriftung-icons">0</p>
+            <p class="beschriftung-icons">1</p>
 
             <!-- Video Modal -->
             <div
